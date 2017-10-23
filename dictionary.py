@@ -28,7 +28,7 @@ while True:
 	para['salt']=salt
 	para['sign']=sign
 	a=requests.get(myurl,params=para).json()
-	print(a)
+	# print(a)
 	print('\n')
 	for temp in a['translation']:
 		print(temp)
