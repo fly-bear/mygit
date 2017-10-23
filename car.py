@@ -41,7 +41,7 @@ def do(sshd,cmd):
     for item in stdout.readlines():
         print (item,)
 
-def get_command():
+def get_command(ddk):
     global use,sshd
     command0 = input('输入命令\n')
     if command0=='e':
@@ -50,8 +50,11 @@ def get_command():
         sshd=login()
     elif command0 == 'c':
         sys.exit()
+    elif command0 == 'dk':
+        global dk
+        dk=input('USB接口号：')
     else:
-        command='echo '+command0+' > /dev/ttyUSB1'
+        command='echo '+command0+' > /dev/ttyUSB'+ddk
         flag = 1
         use = [command, flag]
 
@@ -73,12 +76,15 @@ if __name__ == "__main__":
     # thread1=threading.Thread(target=get_command(),name='thread1')
     # thread2=threading.Thread(target=send_command(),name='thread2')
     # thread2.start()
+    global dk
+    dk = input('USB接口号：')
+
     while True:
         try:
             if use[1]==1:
                 send_command()
             elif use[1]==0:
-                get_command()
+                get_command(dk)
         except:
             use = ['', 0]
     # thread1.start()    #  thread1.join()
