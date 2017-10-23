@@ -36,7 +36,7 @@ def do(sshd,cmd):
 
     if len( err_list ) > 0:
         print ('ERROR:' + err_list[0])
-        exit()
+        # exit()
 
     for item in stdout.readlines():
         print (item,)
