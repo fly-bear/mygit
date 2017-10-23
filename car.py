@@ -1,7 +1,7 @@
 import paramiko
 import time
 import threading
-import sys
+import sys,os
 
 def ssh_connect( _host, _username, _password ,_port):
     try:
@@ -49,10 +49,14 @@ def get_command(ddk):
     elif command0 == 're':
         sshd=login()
     elif command0 == 'c':
-        sys.exit()
+        os._exit(0)
     elif command0 == 'dk':
         global dk
         dk=input('USB接口号：')
+    elif command0=='new':
+        command=input('输入自由命令：\n')
+        flag = 1
+        use = [command, flag]
     else:
         command='echo '+command0+' > /dev/ttyUSB'+ddk
         flag = 1
