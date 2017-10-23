@@ -1,4 +1,3 @@
-this is my first git
-good!
-second
-go!
+my python projects
+yes
+I like it
