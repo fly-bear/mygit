@@ -4,6 +4,7 @@ import getopt
 import threading
 import subprocess
 
+
 #定义一些全局变量
 listen              = False
 command             = False
