@@ -4,7 +4,6 @@ from cxsj import Ui_MainWindow
 import tjnjcx
 from tjnjcx import go
 from PyQt5.QtWidgets import QFileDialog,QMessageBox
-import ok
 
 
 class Goago(QtCore.QThread):
@@ -28,7 +27,6 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         super(mywindow, self).__init__()
         self.setupUi(self)
         self.spinBox.setValue(20)
-        self.ok_window = ok.Ui_Dialog()
         if os.path.exists('d:/tjnj_use.txt'):
             a=open('d:/tjnj_use.txt','r')
             default=a.readlines()
