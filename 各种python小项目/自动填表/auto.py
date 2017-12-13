@@ -77,6 +77,7 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         message=self.get_message()
         print(message)
         filename=str(message[-3])+str(message[-2])+str(message[-1])+'.xlsx'
+        print(filename)
         file=upload.get_file(filename)
         with open(filename,'wb') as f:
             f.write(file)

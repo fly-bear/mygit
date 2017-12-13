@@ -32,3 +32,4 @@ while temp == '' and flag < 20:
     flag = flag + 1
 if flag >= 20:
     raise selfException("登陆不上咯！")
+print(temp)

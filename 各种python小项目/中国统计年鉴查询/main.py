@@ -27,8 +27,8 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         super(mywindow, self).__init__()
         self.setupUi(self)
         self.spinBox.setValue(20)
-        if os.path.exists('d:/tjnj_use.txt'):
-            a=open('d:/tjnj_use.txt','r')
+        if os.path.exists('./tjnj_use.txt'):
+            a=open('./tjnj_use.txt','r')
             default=a.readlines()
             a.close()
             for each in default:
@@ -40,14 +40,14 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.textBrowser.setText("查询中......请稍后")
         add=self.lineEdit.text()
         exsits=[]
-        if os.path.exists('d:/tjnj_use.txt'):
-            a = open('d:/tjnj_use.txt', 'r+')
+        if os.path.exists('./tjnj_use.txt'):
+            a = open('./tjnj_use.txt', 'r+')
             exsits = a.readlines()
             a.close()
         # pd=add+'\n'
         add=add.replace('\n','')
         if  add+'\n' not in exsits:
-            a=open('d:/tjnj_use.txt','a+')
+            a=open('./tjnj_use.txt','a+')
             a.writelines(add+'\n')
             self.comboBox.addItem(add)
             a.close()
@@ -81,7 +81,7 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
                                    '是否确认删除查询记录？',
                                    QMessageBox.Yes | QMessageBox.No)
         if apply==QMessageBox.Yes:
-            os.remove('d:/tjnj_use.txt')
+            os.remove('./tjnj_use.txt')
             self.comboBox.clear()
             self.lineEdit.setText('')
 

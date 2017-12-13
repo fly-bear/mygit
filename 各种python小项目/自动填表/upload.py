@@ -40,3 +40,6 @@ def delete_file():
 def get_file(filename):
     file=requests.get('http://opxukhofd.bkt.clouddn.com/'+filename+'?v='+str(random.randint(10000,55555))).content
     return  file
+
+if __name__=="__main__":
+    upload_file('20171214.xlsx')
