@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/pudb/__init__.py", line 93, in runscript
+    dbg._runscript(mainpyfile)
+  File "/usr/local/lib/python3.5/dist-packages/pudb/debugger.py", line 432, in _runscript
+    self.run(statement, globals=globals_, locals=locals_)
+  File "/usr/lib/python3.5/bdb.py", line 431, in run
+    exec(cmd, globals, locals)
+  File "<string>", line 1, in <module>
+  File "dictionary.py", line 1, in <module>
+    import hashlib
+  File "dictionary.py", line 1, in <module>
+    import hashlib
+  File "/usr/lib/python3.5/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/local/lib/python3.5/dist-packages/pudb/debugger.py", line 160, in dispatch_line
+    self.user_line(frame)
+  File "/usr/local/lib/python3.5/dist-packages/pudb/debugger.py", line 381, in user_line
+    self.interaction(frame)
+  File "/usr/local/lib/python3.5/dist-packages/pudb/debugger.py", line 349, in interaction
+    show_exc_dialog=show_exc_dialog)
+  File "/usr/local/lib/python3.5/dist-packages/pudb/debugger.py", line 2089, in call_with_ui
+    return f(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pudb/debugger.py", line 2330, in interaction
+    self.event_loop()
+  File "/usr/local/lib/python3.5/dist-packages/pudb/debugger.py", line 2296, in event_loop
+    toplevel.keypress(self.size, k)
+  File "/usr/local/lib/python3.5/dist-packages/pudb/ui_tools.py", line 96, in keypress
+    result = self._w.keypress(size, key)
+  File "/usr/local/lib/python3.5/dist-packages/urwid/container.py", line 1128, in keypress
+    return self.body.keypress( (maxcol, remaining), key )
+  File "/usr/local/lib/python3.5/dist-packages/urwid/container.py", line 2269, in keypress
+    key = w.keypress((mc,) + size[1:], key)
+  File "/usr/local/lib/python3.5/dist-packages/pudb/ui_tools.py", line 96, in keypress
+    result = self._w.keypress(size, key)
+  File "/usr/local/lib/python3.5/dist-packages/urwid/container.py", line 1587, in keypress
+    key = self.focus.keypress(tsize, key)
+  File "/usr/local/lib/python3.5/dist-packages/urwid/container.py", line 1587, in keypress
+    key = self.focus.keypress(tsize, key)
+  File "/usr/local/lib/python3.5/dist-packages/pudb/ui_tools.py", line 101, in keypress
+    return handler(self, size, key)
+  File "/usr/local/lib/python3.5/dist-packages/pudb/debugger.py", line 749, in change_var_state
+    .get_inspect_info(var.id_path, read_only=False)
+AttributeError: 'NoneType' object has no attribute 'id_path'

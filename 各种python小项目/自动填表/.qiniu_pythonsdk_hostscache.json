@@ -1,1 +1,1 @@
-{"http:AgalBXSUPi_LPe9E4nmQrMkVSD67ttNiu707HRjD:flybear": {"upHosts": ["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.131.7.18"], "deadline": 1513261137, "ioHosts": ["http://iovip.qbox.me"]}}
+{"http:AgalBXSUPi_LPe9E4nmQrMkVSD67ttNiu707HRjD:flybear": {"ioHosts": ["http://iovip.qbox.me"], "upHosts": ["http://up.qiniu.com", "http://upload.qiniu.com", "-H up.qiniu.com http://183.131.7.18"], "deadline": 1514433675}}

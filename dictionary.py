@@ -1,6 +1,9 @@
 import hashlib
 import requests
 import random
+from pudb import set_trace
+
+set_trace()
 
 appid = '01e625e747188841'
 appKey = 'X6OyKvqaBz6XlQ0Nk58iLpUP3R9Hour1'
@@ -10,6 +13,8 @@ httpClient = None
 myurl = 'http://openapi.youdao.com/api'
 while True:
     q = input()
+    if q=='__exit__':
+        break
     if ord(q[0]) not in range(97, 122) and ord(q[0]) not in range(65, 90):
         fromLang = 'zh-CHS'
         toLang = 'en'
@@ -27,7 +32,8 @@ while True:
     para['q'] = q
     para['salt'] = salt
     para['sign'] = sign
-    a = requests.get(myurl, params=para).json()
+    b=requests.get(myurl, params=para)
+    a = b.json()
     # print(a)
     print('\n')
     for temp in a['translation']:
