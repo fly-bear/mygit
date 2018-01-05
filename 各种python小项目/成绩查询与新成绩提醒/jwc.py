@@ -94,6 +94,7 @@ def get_score(userName,password):
             if len(lesson) < 14:
                 lesson = lesson + ' ' * ((14 - len(lesson)) * 2)
         final_score.append(lesson + '\t' + scores)
+    return final_score
     for scoreo in final_score:
         print (scoreo)
     os.system("pause")
@@ -101,4 +102,5 @@ def get_score(userName,password):
 if __name__=='__main__':
     userName = '0121511371128'
     password = 'dzx52395239'
-    get_score(userName, password)
+    myscore=get_score(userName, password)
+    
