@@ -94,13 +94,32 @@ def get_score(userName,password):
             if len(lesson) < 14:
                 lesson = lesson + ' ' * ((14 - len(lesson)) * 2)
         final_score.append(lesson + '\t' + scores)
-    return final_score
     for scoreo in final_score:
-        print (scoreo)
-    os.system("pause")
+        print(scoreo)
+    return final_score
+
+
+def check(newscore):
+    with open('myscore.txt','r') as f:
+        oldscore=f.read()
+    if oldscore==newscore:
+        return False
+    else:
+        return True     #发生了更新
 
 if __name__=='__main__':
     userName = '0121511371128'
     password = 'dzx52395239'
     myscore=get_score(userName, password)
-    
+    myscore2=str(myscore)
+    if check(myscore2):
+        with open('myscore.txt','w') as f:
+            f.write(myscore2)
+        import sendmail
+        neirong=myscore[0]
+        sendmail.neirong='有新成绩！\n'+neirong
+        sendmail.send()
+        print(sendmail.neirong)
+    else:
+        print("No new scores!")
+    os.system("pause")

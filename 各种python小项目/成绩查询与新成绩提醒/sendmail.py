@@ -13,13 +13,13 @@ def send():
     #邮件发送方邮箱地址
     sender = '15257822881@sohu.com'
     #邮件接受方邮箱地址，注意需要[]包裹，这意味着你可以写多个邮件地址群发
-    receivers = ['dzx518@whut.edu.cn']
+    receivers = ['dzx518@whut.edu.cn','dzx518@gmail.com','dzx518@qq.com']
 
     #设置email信息
     #邮件内容设置
     message = MIMEText(neirong,'plain','utf-8')
     #邮件主题
-    message['Subject'] = '作业通知，请及时完成'
+    message['Subject'] = '有新成绩辣~\(≧▽≦)/~'
     #发送方信息
     message['From'] = sender
     #接受方信息
