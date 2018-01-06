@@ -5,6 +5,7 @@ import csv
 import getpass
 import os
 import lxml
+import datetime
 
 # userName = input('请输入学号：')
 
@@ -13,6 +14,10 @@ import lxml
 # password = getpass.getpass("请输入密码(输入时将不会显示)：")
 # while password =='':
     # password = getpass.getpass("请输入密码(输入时将不会显示)：")
+class selfException(BaseException):  # 继承BaseException类实现自定义异常类
+    def __init__(self, mesg="raise a selfException"):
+        print(mesg)
+
 def get_score(userName,password):
     s = requests.session()
     # 先登陆
@@ -30,7 +35,7 @@ def get_score(userName,password):
         temp = s.post(url1, data=data1).text
         flag = flag + 1
     if flag >= 20:
-        raise selfException("登陆不上咯！")
+        raise selfException("登陆不上咯！")       #抛出异常
     # print(temp)
 
     # 获得snkey
@@ -41,7 +46,7 @@ def get_score(userName,password):
         temp = score.text
         flag = flag + 1
     if flag >= 20:
-        raise selfException("进♂入成绩页面失败")
+        raise selfException("进♂入成绩页面失败")        #抛出异常
     # print(temp+str(flag))
     a1 = temp.find('" target="navTab">成绩查询</a></li>')
     a2 = temp.find('snkey=')
@@ -73,7 +78,7 @@ def get_score(userName,password):
         temp = my_score.text
         flag = flag + 1
     if flag >= 20:
-        raise selfException("获取成绩失败")
+        raise selfException("获取成绩失败")       #抛出异常
     soup = BeautifulSoup(temp, 'lxml')
     trs = soup.find_all('tr')
     # print(trs)
@@ -100,7 +105,7 @@ def get_score(userName,password):
 
 
 def check(newscore):
-    with open('myscore.txt','r') as f:
+    with open('/home/flybear/Desktop/mygit/各种python小项目/成绩查询与新成绩提醒/myscore.txt','r') as f:
         oldscore=f.read()
     if oldscore==newscore:
         return False
@@ -108,18 +113,19 @@ def check(newscore):
         return True     #发生了更新
 
 if __name__=='__main__':
+    now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     userName = '0121511371128'
     password = 'dzx52395239'
+    receivers = ['dzx518@whut.edu.cn']
     myscore=get_score(userName, password)
     myscore2=str(myscore)
     if check(myscore2):
-        with open('myscore.txt','w') as f:
+        with open('/home/flybear/Desktop/mygit/各种python小项目/成绩查询与新成绩提醒/myscore.txt','w') as f:
             f.write(myscore2)
         import sendmail
         neirong=myscore[0]
-        sendmail.neirong='有新成绩！\n'+neirong
-        sendmail.send()
+        sendmail.neirong='有新成绩！\n'+neirong+'\n'+now
+        sendmail.send(receivers)
         print(sendmail.neirong)
     else:
-        print("No new scores!")
-    os.system("pause")
+        print("No new scores!\n"+now)

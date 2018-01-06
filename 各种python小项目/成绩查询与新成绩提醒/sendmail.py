@@ -2,7 +2,7 @@ import smtplib
 from email.mime.text import MIMEText
 
 neirong=''
-def send():
+def send(receivers):
     #设置服务器所需信息
     #163邮箱服务器地址
     mail_host = 'smtp.sohu.com'
@@ -13,7 +13,6 @@ def send():
     #邮件发送方邮箱地址
     sender = '15257822881@sohu.com'
     #邮件接受方邮箱地址，注意需要[]包裹，这意味着你可以写多个邮件地址群发
-    receivers = ['dzx518@whut.edu.cn','dzx518@gmail.com','dzx518@qq.com']
 
     #设置email信息
     #邮件内容设置
@@ -23,7 +22,7 @@ def send():
     #发送方信息
     message['From'] = sender
     #接受方信息
-    message['To'] = receivers[0]
+    message['To'] = ','.join(receivers)
 
     #登录并发送邮件
     try:
@@ -40,3 +39,8 @@ def send():
         print('success')
     except smtplib.SMTPException as e:
         print('error',e) #打印错误
+
+if __name__=='__main__':
+    neirong='又双叒叕是一次测试呀！'
+    receivers=['dzx518@whut.edu.cn','1261422271@qq.com']
+    send(receivers)
