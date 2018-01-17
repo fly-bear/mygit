@@ -1,8 +1,7 @@
 import smtplib
 from email.mime.text import MIMEText
 
-neirong=''
-def send(receivers):
+def send(receivers,neirong):
     #设置服务器所需信息
     #163邮箱服务器地址
     mail_host = 'smtp.sohu.com'
@@ -43,4 +42,4 @@ def send(receivers):
 if __name__=='__main__':
     neirong='又双叒叕是一次测试呀！'
     receivers=['dzx518@whut.edu.cn','1261422271@qq.com']
-    send(receivers)
+    send(receivers,neirong)

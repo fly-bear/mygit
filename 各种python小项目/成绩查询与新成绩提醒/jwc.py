@@ -98,7 +98,7 @@ def get_score(userName,password):
         if len(lesson) < 14:
             if len(lesson) < 14:
                 lesson = lesson + ' ' * ((14 - len(lesson)) * 2)
-        final_score.append(lesson + '\t' + scores)
+        final_score.append(lesson + ' ' + scores)
     for scoreo in final_score:
         print(scoreo)
     return final_score
@@ -116,16 +116,18 @@ if __name__=='__main__':
     now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     userName = '0121511371128'
     password = 'dzx52395239'
-    receivers = ['dzx518@whut.edu.cn']
+    receivers = ['dzx518@whut.edu.cn','1261422271@qq.com','15257822881@sohu.com']
     myscore=get_score(userName, password)
     myscore2=str(myscore)
     if check(myscore2):
+    #if True:
         with open('/home/flybear/Desktop/mygit/各种python小项目/成绩查询与新成绩提醒/myscore.txt','w') as f:
             f.write(myscore2)
         import sendmail
-        neirong=myscore[0]
-        sendmail.neirong='有新成绩！\n'+neirong+'\n'+now
-        sendmail.send(receivers)
-        print(sendmail.neirong)
+        neirong='\n'.join(myscore)
+        neirong=now+'\n'+neirong
+        sendmail.send(receivers,str(neirong))
+        #sendmail.send(receivers,'测试啊测试我')
+        print(neirong+'\n'+now)
     else:
         print("No new scores!\n"+now)
