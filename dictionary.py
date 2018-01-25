@@ -3,8 +3,6 @@ import requests
 import random
 from pudb import set_trace
 
-set_trace()
-
 appid = '01e625e747188841'
 appKey = 'X6OyKvqaBz6XlQ0Nk58iLpUP3R9Hour1'
 
