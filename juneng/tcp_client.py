@@ -85,6 +85,7 @@ if __name__=='__main__':
     for each in result:
         if isinstance(each, dict):
             for value in each.values():
+
                 print(value,end='\t')
             print()
         elif isinstance(each, str):
