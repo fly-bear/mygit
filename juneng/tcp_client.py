@@ -77,10 +77,11 @@ def search(host,port,command):
         return e
 
 if __name__=='__main__':
-    command='searchdriverSPC姓名="戴郑雄"'
+    # command='searchdriverSPC姓名="戴郑雄"'
     # command='insertdriver"李智敏",2,2.222'
-    # command='searchdriverALL'
+    command='searchdriverALL'
     result=search('106.15.199.206', 6666, command)
+    print('驾龄  \t姓名  \t反应时间')
     for each in result:
         if isinstance(each, dict):
             for value in each.values():
