@@ -1,7 +1,7 @@
 import pymysql
 
 def search():
-    db = pymysql.connect('localhost', 'root', 'hyggbgb', 'flybear', charset='utf8')
+    db = pymysql.connect('localhost', 'root', 'hyggbgb', 'junengcar', charset='utf8')
     cursor = db.cursor(cursor=pymysql.cursors.DictCursor)
     choise=input('请选择查询方式：\n按ID查询：0\n按姓名查询：1\n查询全部：2\n>>')
     if choise=='0':
@@ -15,7 +15,7 @@ def search():
 
 def exe(sql):
     try:
-        db = pymysql.connect('localhost', 'root', 'hyggbgb', 'flybear', charset='utf8')
+        db = pymysql.connect('localhost', 'root', 'hyggbgb', 'junengcar', charset='utf8')
         cursor = db.cursor(cursor=pymysql.cursors.DictCursor)
         result=cursor.execute(sql)
         db.commit()
