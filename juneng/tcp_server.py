@@ -56,7 +56,8 @@ def handle2(client_socket,addr):
                 result = insert(request[6:])
                 sent = json.dumps(result)
             elif request[:6]=='delete':
-                pass
+                result = delete(request[6:])
+                sent = json.dumps(result)
             else:
                 sent=json.dumps(['命令有误！'])
             client_socket.send((sent+'SEND_STOP').encode())
@@ -85,6 +86,14 @@ def insert(command):
     mysql.exe(check)
     cs=command[6:].split(',')
     [data, result] = mysql.exe('insert into ' + command[:6].replace('0', '')+'('+allkey+')value('+command[6:]+')')
+    if result==1:
+        return ['OK!']
+    else:
+        return ['faild!']
+
+
+def delete(command):
+    [data, result] = mysql.exe('delete from '+command[:6].replace('0','')+' where '+command[6:])
     if result==1:
         return ['OK!']
     else:

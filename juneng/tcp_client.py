@@ -77,12 +77,14 @@ def search(host,port,command):
         return e
 
 if __name__=='__main__':
-    # command='searchtest00SPCname="戴郑雄"'
-    # command='inserttest004,"周道林",0'
-    command='searchtest00ALL'
-    result=search('localhost', 6666, command)
+    command='searchdriverSPC姓名="戴郑雄"'
+    # command='insertdriver"李智敏",2,2.222'
+    # command='searchdriverALL'
+    result=search('106.15.199.206', 6666, command)
     for each in result:
         if isinstance(each, dict):
-            print(str(each['ID']) + '\t' + each['name'] + ' \t' + str(each['status']))
+            for value in each.values():
+                print(value,end='\t')
+            print()
         elif isinstance(each, str):
             print(each)

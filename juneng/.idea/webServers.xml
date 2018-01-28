@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b25bc7a7-9606-4220-83ae-eb616d15cd5a" name="aliyun" url="http://106.15.199.206">
+        <fileTransfer host="106.15.199.206" port="22" rootFolder="/usr/bear/Desktop/mygit" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
