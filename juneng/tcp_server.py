@@ -111,7 +111,7 @@ def check(command):
     for each in dy:
         keys.append(each['COLUMN_NAME'])  # 获取所有字段名称
     allkey = ','.join(keys)
-    return allkey
+    return keys
 
 
 if __name__=='__main__':
