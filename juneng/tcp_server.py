@@ -59,6 +59,9 @@ def handle2(client_socket,addr):
         elif request[:6]=='delete':
             result = delete(request[6:])
             sent = json.dumps(result)
+        elif request[:5]=='check':
+            result=check(request[6:])
+            sent=json.dumps(result)
         else:
             sent=json.dumps([{'return':'命令有误！'}])
         client_socket.send((sent+'SEND_STOP').encode())
@@ -84,7 +87,7 @@ def insert(command):
     for each in check:
         keys.append(each['COLUMN_NAME'])    #获取所有字段名称
     allkey=','.join(keys)
-    mysql.exe(check)
+    # mysql.exe(check)
     cs=command[6:].split(',')
     [data, result] = mysql.exe('insert into ' + command[:6].replace('0', '')+'('+allkey+')value('+command[6:]+')')
     if result==1:
@@ -99,6 +102,17 @@ def delete(command):
         return [{'return':'OK!'}]
     else:
         return [{'return':'faild!'}]
+
+def check(command):
+    dy = mysql.exe(
+        'select COLUMN_NAME,column_comment from INFORMATION_SCHEMA.Columns where table_name=\"' + command[:6].replace(
+            '0', '') + '\"')[0]
+    keys = []
+    for each in dy:
+        keys.append(each['COLUMN_NAME'])  # 获取所有字段名称
+    allkey = ','.join(keys)
+    return allkey
+
 
 if __name__=='__main__':
     bind_ip = '0.0.0.0'
