@@ -88,17 +88,17 @@ def insert(command):
     cs=command[6:].split(',')
     [data, result] = mysql.exe('insert into ' + command[:6].replace('0', '')+'('+allkey+')value('+command[6:]+')')
     if result==1:
-        return ['OK!']
+        return [{'return':'OK!'}]
     else:
-        return ['faild!']
+        return [{'return':'faild!'}]
 
 
 def delete(command):
     [data, result] = mysql.exe('delete from '+command[:6].replace('0','')+' where '+command[6:])
     if result==1:
-        return ['OK!']
+        return [{'return':'OK!'}]
     else:
-        return ['faild!']
+        return [{'return':'faild!'}]
 
 if __name__=='__main__':
     bind_ip = '0.0.0.0'
