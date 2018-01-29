@@ -61,7 +61,6 @@ def handle2(client_socket,addr):
             sent = json.dumps(result)
         else:
             sent=json.dumps([{'return':'命令有误！'}])
-        print(sent)
         client_socket.send((sent+'SEND_STOP').encode())
     except Exception as e:
         client_socket.send((json.dumps([e]) + 'SEND_STOP').encode())
