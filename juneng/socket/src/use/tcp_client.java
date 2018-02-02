@@ -4,6 +4,7 @@ import com.sun.xml.internal.stream.writers.UTF8OutputStreamWriter;
 
 import java.net.Socket;
 import java.io.*;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -50,22 +51,32 @@ public class tcp_client {
                 out.write((command+"SEND_STOP").getBytes("UTF-8"));
                 out.flush();
                 ret = recieve(input);
-                JSONArray jsonArray=JSONArray.fromObject(ret);
-                String title=jsonArray.getString(0);
-                Map<String,Object> b=JSONObject.fromObject(title);
-                for(String j:b.keySet()){
-                    System.out.print(j);
-                    System.out.print(" \t");
+                if(command.substring(0,5).equals("check")){
+                    JSONArray jsonArray = JSONArray.fromObject(ret);
+                    List items=JSONArray.fromObject(jsonArray);
+                    for(Object a:items){
+                        System.out.print(a);
+                        System.out.print(" \t");
+                    }
                 }
-                System.out.println();
-                for(int i=0;i<jsonArray.size();i++){
-                    String test=jsonArray.getString(i);
-                    Map<String,Object> a=JSONObject.fromObject(test);
-                    for(String j:a.keySet()){
-                        System.out.print(a.get(j));
+                else {
+                    JSONArray jsonArray = JSONArray.fromObject(ret);
+                    String title = jsonArray.getString(0);
+                    Map<String, Object> b = JSONObject.fromObject(title);
+                    for (String j : b.keySet()) {
+                        System.out.print(j);
                         System.out.print(" \t");
                     }
                     System.out.println();
+                    for (int i = 0; i < jsonArray.size(); i++) {
+                        String test = jsonArray.getString(i);
+                        Map<String, Object> a = JSONObject.fromObject(test);
+                        for (String j : a.keySet()) {
+                            System.out.print(a.get(j));
+                            System.out.print("     \t");
+                        }
+                        System.out.println();
+                    }
                 }
                 out.write("close_connect' + 'SEND_STOP".getBytes("UTF-8"));
                 out.close();
