@@ -73,11 +73,11 @@ def handle2(client_socket,addr):
 
 
 def search(command):
-    if command[6:9]=='ALL':
-        [data, result]=mysql.exe('select * from '+command[:6].replace('0',''))
+    if command[10:13]=='ALL':
+        [data, result]=mysql.exe('select * from '+command[:10].replace('0',''))
         return data
-    elif command[6:9]=='SPC':
-        [data, result] = mysql.exe('select * from ' + command[:6].replace('0','')+' where '+command[9:])
+    elif command[10:13]=='SPC':
+        [data, result] = mysql.exe('select * from ' + command[:10].replace('0','')+' where '+command[13:])
         return data
 
 
@@ -88,8 +88,8 @@ def insert(command):
         keys.append(each['COLUMN_NAME'])    #获取所有字段名称
     allkey=','.join(keys)
     # mysql.exe(check)
-    cs=command[6:].split(',')
-    [data, result] = mysql.exe('insert into ' + command[:6].replace('0', '')+'('+allkey+')value('+command[6:]+')')
+    cs=command[10:].split(',')
+    [data, result] = mysql.exe('insert into ' + command[:10].replace('0', '')+'('+allkey+')value('+command[10:]+')')
     if result==1:
         return [{'return':'OK!'}]
     else:
@@ -97,7 +97,7 @@ def insert(command):
 
 
 def delete(command):
-    [data, result] = mysql.exe('delete from '+command[:6].replace('0','')+' where '+command[6:])
+    [data, result] = mysql.exe('delete from '+command[:10].replace('0','')+' where '+command[10:])
     if result==1:
         return [{'return':'OK!'}]
     else:
@@ -105,7 +105,7 @@ def delete(command):
 
 def check(command):
     dy = mysql.exe(
-        'select COLUMN_NAME,column_comment from INFORMATION_SCHEMA.Columns where table_name=\"' + command[:6].replace(
+        'select COLUMN_NAME,column_comment from INFORMATION_SCHEMA.Columns where table_name=\"' + command[:10].replace(
             '0', '') + '\"')[0]
     keys = []
     for each in dy:
