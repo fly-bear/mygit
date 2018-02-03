@@ -5,36 +5,28 @@ import json
 from decimal import *
 
 
-# def handle_client(client_socket,addr):
-#     client_socket.send(('您的IP：\t'+addr[0]+':'+str(addr[1])+'\t连接成功！请输入SQL命令'+'SEND_STOP').encode())
-#     while True:
-#         request=''
-#         while True:
-#             request = request + client.recv(1024).decode()
-#             if request[-9:] == 'SEND_STOP':
-#                 break
-#         if request[:-9]=='close_connect':
-#             break
-#         request=request[:-9]
-#         print('[*] Recieved: %s' % request)
-#         try:
-#             if request[:6]=='select':
-#                 result=mysql.exe(request)[0]
-#                 sent=json.dumps(result)
-#             elif request[:6]=='insert' or request[:6]=='delete':
-#                 result = mysql.exe(request)[1]
-#                 if result==1:
-#                     sent=json.dumps(['OK'])
-#                 else:
-#                     sent=json.dumps(['faild'])
-#             else:
-#                 sent=json.dumps(['命令有误！'])
-#             client_socket.send((sent+'SEND_STOP').encode())
-#         except Exception as e:
-#             client_socket.send((json.dumps([e]) + 'SEND_STOP').encode())
-#         # client_socket.close()
-#     client_socket.close()
-#     print('diconnect')
+ #
+ #                             _ooOoo_
+ #                            o8888888o
+ #                            88" . "88
+ #                            (| -_- |)
+ #                            O\  =  /O
+ #                         ____/`---'\____
+ #                       .'  \\|     |//  `.
+ #                      /  \\|||  :  |||//  \
+ #                     /  _||||| -:- |||||-  \
+ #                     |   | \\\  -  /// |   |
+ #                     | \_|  ''\---/''  |   |
+ #                     \  .-\__  `-`  ___/-. /
+ #                   ___`. .'  /--.--\  `. . __
+ #                ."" '<  `.___\_<|>_/___.'  >'"".
+ #               | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ #               \  \ `-.   \_ __\ /__ _/   .-` /  /
+ #          ======`-.____`-.___\_____/___.-`____.-'======
+ #                             `=---='
+ #          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ #                     佛祖保佑        永无BUG
+ #                     
 
 def handle2(client_socket,addr):
     client_socket.send(('您的IP：\t' + addr[0] + ':' + str(addr[1]) + '\t连接成功！'+ 'SEND_STOP').encode())
