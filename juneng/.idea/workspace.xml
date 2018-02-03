@@ -12,7 +12,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Desktop$mysql.coverage" NAME="mysql Coverage Results" MODIFIED="1517024146254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/juneng$Unittests_in_tcp_client_py.coverage" NAME="Unittests in tcp_client.py Coverage Results" MODIFIED="1517055984380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/juneng$tcp_server.coverage" NAME="tcp_server Coverage Results" MODIFIED="1517219754708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/juneng$tcp_server.coverage" NAME="tcp_server Coverage Results" MODIFIED="1517640557212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Desktop$tcp_server.coverage" NAME="tcp_server Coverage Results" MODIFIED="1517049577091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/juneng$tcp_client_py.coverage" NAME="tcp_client.py Coverage Results" MODIFIED="1517056304896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/juneng$tcp_client.coverage" NAME="tcp_client Coverage Results" MODIFIED="1517218663952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -27,7 +27,7 @@
       <file leaf-file-name="tcp_client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tcp_client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1694">
+            <state relative-caret-position="1672">
               <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding />
             </state>
@@ -37,14 +37,14 @@
       <file leaf-file-name="tcp_server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tcp_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+            <state relative-caret-position="396">
+              <caret line="86" column="37" lean-forward="true" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#59#99#0" expanded="false" />
-                <marker date="1517635246751" expanded="true" signature="2823:2941" ph="select COLUM... Columns" />
-                <marker date="1517635246751" expanded="true" signature="2906:2941" ph="select COLUM... Columns" />
-                <marker date="1517635246751" expanded="true" signature="3603:3740" ph="select COLUM... Columns" />
+                <element signature="e#80#120#0" expanded="false" />
+                <marker date="1517642180515" expanded="true" signature="3185:3303" ph="select COLUM... Columns" />
+                <marker date="1517642180515" expanded="true" signature="3268:3303" ph="select COLUM... Columns" />
+                <marker date="1517642180515" expanded="true" signature="3965:4102" ph="select COLUM... Columns" />
               </folding>
             </state>
           </provider>
@@ -92,9 +92,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="320" />
-    <option name="width" value="1600" />
-    <option name="height" value="900" />
+    <option name="y" value="901" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -112,7 +112,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -128,6 +127,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -430,19 +430,19 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="320" y="0" width="1600" height="900" extended-state="7" />
+    <frame x="0" y="901" width="1920" height="1080" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14736165" sideWeight="0.49376947" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11152615" sideWeight="0.49376947" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2651357" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2651357" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26096034" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="0" y="467" width="1920" height="335" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26096034" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="0" y="467" width="1920" height="335" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1339381" sideWeight="0.50623053" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -480,6 +480,74 @@
     <entry file="file://$PROJECT_DIR$/mysql.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding>
+            <marker date="1517221009034" expanded="true" signature="275:305" ph="select * fro... test" />
+            <marker date="1517221009034" expanded="true" signature="373:405" ph="select * fro... test" />
+            <marker date="1517221009034" expanded="true" signature="474:492" ph="select * fro... test" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcp_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1716">
+          <caret line="78" column="27" lean-forward="false" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#80#120#0" expanded="false" />
+            <marker date="1517642180515" expanded="true" signature="3185:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3268:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3965:4102" ph="select COLUM... Columns" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcp_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcp_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#80#120#0" expanded="false" />
+            <marker date="1517642180515" expanded="true" signature="3185:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3268:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3965:4102" ph="select COLUM... Columns" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding>
+            <marker date="1517221009034" expanded="true" signature="275:305" ph="select * fro... test" />
+            <marker date="1517221009034" expanded="true" signature="373:405" ph="select * fro... test" />
+            <marker date="1517221009034" expanded="true" signature="474:492" ph="select * fro... test" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcp_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1694">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
           <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding>
             <marker date="1517221009034" expanded="true" signature="275:305" ph="select * fro... test" />
@@ -495,10 +563,10 @@
           <caret line="105" column="19" lean-forward="true" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="19" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#59#99#0" expanded="false" />
-            <marker date="1517635246751" expanded="true" signature="2823:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="2906:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="3603:3740" ph="select COLUM... Columns" />
+            <element signature="e#80#120#0" expanded="false" />
+            <marker date="1517642180515" expanded="true" signature="3185:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3268:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3965:4102" ph="select COLUM... Columns" />
           </folding>
         </state>
       </provider>
@@ -517,10 +585,10 @@
           <caret line="85" column="20" lean-forward="true" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#59#99#0" expanded="false" />
-            <marker date="1517635246751" expanded="true" signature="2823:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="2906:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="3603:3740" ph="select COLUM... Columns" />
+            <element signature="e#80#120#0" expanded="false" />
+            <marker date="1517642180515" expanded="true" signature="3185:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3268:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3965:4102" ph="select COLUM... Columns" />
           </folding>
         </state>
       </provider>
@@ -563,10 +631,10 @@
           <caret line="80" column="28" lean-forward="false" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#59#99#0" expanded="false" />
-            <marker date="1517635246751" expanded="true" signature="2823:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="2906:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="3603:3740" ph="select COLUM... Columns" />
+            <element signature="e#80#120#0" expanded="false" />
+            <marker date="1517642180515" expanded="true" signature="3185:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3268:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3965:4102" ph="select COLUM... Columns" />
           </folding>
         </state>
       </provider>
@@ -585,10 +653,10 @@
           <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#59#99#0" expanded="false" />
-            <marker date="1517635246751" expanded="true" signature="2823:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="2906:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="3603:3740" ph="select COLUM... Columns" />
+            <element signature="e#80#120#0" expanded="false" />
+            <marker date="1517642180515" expanded="true" signature="3185:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3268:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3965:4102" ph="select COLUM... Columns" />
           </folding>
         </state>
       </provider>
@@ -627,10 +695,10 @@
           <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#59#99#0" expanded="false" />
-            <marker date="1517635246751" expanded="true" signature="2823:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="2906:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="3603:3740" ph="select COLUM... Columns" />
+            <element signature="e#80#120#0" expanded="false" />
+            <marker date="1517642180515" expanded="true" signature="3185:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3268:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3965:4102" ph="select COLUM... Columns" />
           </folding>
         </state>
       </provider>
@@ -661,10 +729,10 @@
           <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#59#99#0" expanded="false" />
-            <marker date="1517635246751" expanded="true" signature="2823:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="2906:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="3603:3740" ph="select COLUM... Columns" />
+            <element signature="e#80#120#0" expanded="false" />
+            <marker date="1517642180515" expanded="true" signature="3185:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3268:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3965:4102" ph="select COLUM... Columns" />
           </folding>
         </state>
       </provider>
@@ -749,7 +817,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tcp_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1694">
+        <state relative-caret-position="1672">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding />
         </state>
@@ -769,14 +837,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tcp_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+        <state relative-caret-position="396">
+          <caret line="86" column="37" lean-forward="true" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#59#99#0" expanded="false" />
-            <marker date="1517635246751" expanded="true" signature="2823:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="2906:2941" ph="select COLUM... Columns" />
-            <marker date="1517635246751" expanded="true" signature="3603:3740" ph="select COLUM... Columns" />
+            <element signature="e#80#120#0" expanded="false" />
+            <marker date="1517642180515" expanded="true" signature="3185:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3268:3303" ph="select COLUM... Columns" />
+            <marker date="1517642180515" expanded="true" signature="3965:4102" ph="select COLUM... Columns" />
           </folding>
         </state>
       </provider>

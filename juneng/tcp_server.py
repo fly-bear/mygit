@@ -2,7 +2,7 @@ import socket
 import threading
 import mysql
 import json
-
+from decimal import *
 
 
 # def handle_client(client_socket,addr):
@@ -75,9 +75,18 @@ def handle2(client_socket,addr):
 def search(command):
     if command[10:13]=='ALL':
         [data, result]=mysql.exe('select * from '+command[:10].replace('0',''))
+        for each in data:
+            for each1 in each.keys():
+                if isinstance(each[each1], Decimal):
+                    each[each1] = float(each[each1])
+
         return data
     elif command[10:13]=='SPC':
         [data, result] = mysql.exe('select * from ' + command[:10].replace('0','')+' where '+command[13:])
+        for each in data:
+            for each1 in each.keys():
+                if isinstance(each[each1], Decimal):
+                    each[each1] = float(each[each1])
         return data
 
 
