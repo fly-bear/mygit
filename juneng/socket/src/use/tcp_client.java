@@ -33,7 +33,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
  *                             `=---='
  *          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  *                     佛祖保佑        永无BUG
- *                     */
+ **/
 public class tcp_client {
     public static final String IP_ADDR = "106.15.199.206";//服务器地址
 //    public static final String IP_ADDR = "localhost";
@@ -63,55 +63,58 @@ public class tcp_client {
         }
     }
 
-    public static void client(String IP,int port,String command) {
+    public static void client(String IP,int port,String[] commands) {
             Socket socket = null;
             try {
                 //创建一个流套接字并将其连接到指定主机上的指定端口号
-                long starttime=System.currentTimeMillis();
+
                 socket = new Socket(IP, port);
 
-                //读取服务器端数据
                 DataInputStream input = new DataInputStream(socket.getInputStream());
                 //向服务器端发送数据
                 DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-                String ret=recieve(input);
+                //读取服务器端数据
+                String ret = recieve(input);
                 System.out.println("服务器: " + ret);
+                for (String command:commands) {//遍历每个command
+                    long starttime=System.currentTimeMillis();
+                    out.write((command + "SEND_STOP").getBytes("UTF-8"));
+                    out.flush();
+                    ret = recieve(input);
 
-                out.write((command+"SEND_STOP").getBytes("UTF-8"));
-                out.flush();
-                ret = recieve(input);
-                long endtime=System.currentTimeMillis();
-                if(command.substring(0,5).equals("check")){
-                    JSONArray jsonArray = JSONArray.fromObject(ret);
-                    List items=JSONArray.fromObject(jsonArray);
-                    System.out.println("当前数据表所有字段：");
-                    for(Object a:items){
-                        System.out.print(a);
-                        System.out.print(" \t");
-                    }
-                    System.out.println();
-                }
-                else {
-                    JSONArray jsonArray = JSONArray.fromObject(ret);
-                    String title = jsonArray.getString(0);
-                    Map<String, Object> b = JSONObject.fromObject(title);
-                    for (String j : b.keySet()) {
-                        System.out.print(j);
-                        System.out.print(" \t");
-                    }
-                    System.out.println();
-                    for (int i = 0; i < jsonArray.size(); i++) {
-                        String test = jsonArray.getString(i);
-                        Map<String, Object> a = JSONObject.fromObject(test);
-                        for (String j : a.keySet()) {
-                            System.out.print(a.get(j));
-                            System.out.print("     \t");
+                    if (command.substring(0, 5).equals("check")) {
+                        JSONArray jsonArray = JSONArray.fromObject(ret);
+                        List items = JSONArray.fromObject(jsonArray);
+                        System.out.println("当前数据表所有字段：");
+                        for (Object a : items) {
+                            System.out.print(a);
+                            System.out.print(" \t");
                         }
                         System.out.println();
+                    } else {
+                        JSONArray jsonArray = JSONArray.fromObject(ret);
+                        String title = jsonArray.getString(0);
+                        Map<String, Object> b = JSONObject.fromObject(title);
+                        for (String j : b.keySet()) {
+                            System.out.print(j);
+                            System.out.print(" \t");
+                        }
+                        System.out.println();
+                        for (int i = 0; i < jsonArray.size(); i++) {
+                            String test = jsonArray.getString(i);
+                            Map<String, Object> a = JSONObject.fromObject(test);
+                            for (String j : a.keySet()) {
+                                System.out.print(a.get(j));
+                                System.out.print("     \t");
+                            }
+                            System.out.println();
+                        }
                     }
+                    long endtime = System.currentTimeMillis();
+                    System.out.println("总共耗时：" + (endtime - starttime) + " ms");
+
                 }
-                System.out.println("总共耗时："+(endtime-starttime)+" ms");
-                out.write("close_connect' + 'SEND_STOP".getBytes("UTF-8"));
+                out.write(("close_connect"+"SEND_STOP").getBytes("UTF-8"));
                 out.close();
                 input.close();
             } catch (Exception e) {
@@ -119,6 +122,7 @@ public class tcp_client {
             } finally {
                 if (socket != null) {
                     try {
+
                         socket.close();
                     } catch (IOException e) {
                         socket = null;

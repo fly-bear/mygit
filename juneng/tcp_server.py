@@ -30,38 +30,39 @@ from decimal import *
 
 def handle2(client_socket,addr):
     client_socket.send(('您的IP：\t' + addr[0] + ':' + str(addr[1]) + '\t连接成功！'+ 'SEND_STOP').encode())
-    # while True:
-    request=''
     while True:
-        request = request + client.recv(1024).decode()
-        if request[-9:] == 'SEND_STOP':
-            break
-    if request[:-9]=='close_connect':
-        client_socket.close()
-        return
-    request=request[:-9]
-    print('[*] Recieved: %s' % request)
-    try:
-        if request[:6]=='search':
-            result=search(request[6:])
-            sent=json.dumps(result)
-        elif request[:6]=='insert':
-            result = insert(request[6:])
-            sent = json.dumps(result)
-        elif request[:6]=='delete':
-            result = delete(request[6:])
-            sent = json.dumps(result)
-        elif request[:5]=='check':
-            result=check(request[6:])
-            sent=json.dumps(result)
-        else:
-            sent=json.dumps([{'return':'命令有误！'}])
-        client_socket.send((sent+'SEND_STOP').encode())
-    except Exception as e:
-        client_socket.send((json.dumps([e]) + 'SEND_STOP').encode())
-        # client_socket.close()
-    client_socket.close()
-    print('diconnect')
+        request=''
+        while True:
+            request = request + client.recv(1024).decode()
+            if request[-9:] == 'SEND_STOP':
+                break
+        if request[:-9]=='close_connect':
+            print('diconnect')
+            client_socket.close()
+            return
+        request=request[:-9]
+        print('[*] Recieved: %s' % request)
+        try:
+            if request[:6]=='search':
+                result=search(request[6:])
+                sent=json.dumps(result)
+            elif request[:6]=='insert':
+                result = insert(request[6:])
+                sent = json.dumps(result)
+            elif request[:6]=='delete':
+                result = delete(request[6:])
+                sent = json.dumps(result)
+            elif request[:5]=='check':
+                result=check(request[6:])
+                sent=json.dumps(result)
+            else:
+                sent=json.dumps([{'return':'命令有误！'}])
+            client_socket.send((sent+'SEND_STOP').encode())
+        except Exception as e:
+            client_socket.send((json.dumps([e]) + 'SEND_STOP').encode())
+            client_socket.close()
+            print("error:\n"+e)
+
 
 
 def search(command):
