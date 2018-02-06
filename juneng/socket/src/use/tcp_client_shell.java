@@ -91,7 +91,7 @@ public class tcp_client_shell {
                 out.write((command + "SEND_STOP").getBytes("UTF-8"));
                 out.flush();
                 ret = recieve(input);
-
+                long connect_end=System.currentTimeMillis();
                 if (command.substring(0, 5).equals("check")) {
                     JSONArray jsonArray = JSONArray.fromObject(ret);
                     List items = JSONArray.fromObject(jsonArray);
@@ -121,7 +121,7 @@ public class tcp_client_shell {
                     }
                 }
                 long endtime = System.currentTimeMillis();
-                System.out.println("总共耗时：" + (endtime - starttime) + " ms");
+                System.out.println("通讯耗时："+(connect_end-starttime)+" ms\n总共耗时：" + (endtime - starttime) + " ms");
 
             }
             out.write(("close_connect" + "SEND_STOP").getBytes("UTF-8"));
