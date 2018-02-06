@@ -15,7 +15,7 @@ def search():
 
 def exe(sql):
     try:
-        db = pymysql.connect('localhost', 'root', 'hyggbgb', 'junengcar', charset='utf8')
+        db = pymysql.connect('localhost', 'root', 'hyggbgb', 'flybear', charset='utf8')
         cursor = db.cursor(cursor=pymysql.cursors.DictCursor)
         result=cursor.execute(sql)
         db.commit()
