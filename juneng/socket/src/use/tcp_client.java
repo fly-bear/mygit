@@ -10,7 +10,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 /**
  *                             _ooOoo_
@@ -35,9 +34,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
  *                     佛祖保佑        永无BUG
  **/
 public class tcp_client {
-    public static final String IP_ADDR = "106.15.199.206";//服务器地址
-//    public static final String IP_ADDR = "localhost";
-    public static final int PORT = 6666;//服务器端口号
+
     private static String recieve(DataInputStream input) {
         try {
             Boolean flag=false;

@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import java.util.Scanner;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 /**
  *                             _ooOoo_
@@ -36,17 +35,13 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
  *                     佛祖保佑        永无BUG
  **/
 public class tcp_client_shell {
-    public static final String IP_ADDR = "106.15.199.206";//服务器地址
-    //    public static final String IP_ADDR = "localhost";
-    public static final int PORT = 6666;//服务器端口号
     private static String recieve(DataInputStream input) {
         try {
             Boolean flag=false;
             StringBuilder ret=new StringBuilder();
             while(!flag) {
                 byte[] a = new byte[1024];
-                int b = 0;
-                b = input.read(a);
+                input.read(a);
                 //利用正则表达式去除空白字符
                 String temp = new String(a, "UTF-8");
                 String patt = "SEND_STOP.*";
@@ -128,13 +123,13 @@ public class tcp_client_shell {
             sc.close();
 
         }catch (Exception e){//连接出问题
-            System.out.println("连接异常:" + e.getMessage());
+            System.out.println("收发或数据异常:" + e.getMessage());
             out.write(("close_connect" + "SEND_STOP").getBytes("UTF-8"));
         }
             out.close();
             input.close();
         } catch (Exception e) {
-            System.out.println("收发异常:" + e.getMessage());
+            System.out.println("连接异常:" + e.getMessage());
         } finally {
             if (socket != null) {
                 try {
@@ -146,5 +141,6 @@ public class tcp_client_shell {
                 }
             }
         }
+
     }
 }
