@@ -100,6 +100,8 @@ public class tcp_client_shell {
                     JSONArray jsonArray = JSONArray.fromObject(ret);
                     String title = jsonArray.getString(0);
                     Map<String, Object> b = JSONObject.fromObject(title);
+
+
                     for (String j : b.keySet()) {
                         System.out.print(j);
                         System.out.print(" \t");
