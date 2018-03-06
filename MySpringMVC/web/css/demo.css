@@ -1,0 +1,116 @@
+﻿body
+{
+    font-family: 'Open Sans' , sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1
+{
+    font-weight: 100;
+    font-size: 50px;
+    text-align: center;
+    color: #545454;
+    margin: 0;
+}
+h2
+{
+    font-weight: 100;
+    font-size: 20px;
+    text-align: center;
+    color: #969696;
+    margin-top: 10px;
+}
+
+.ppnl, .pn1, .pn2, .pn3, .pn4, .pn5, .pn6, .pn7
+{
+    padding: 60px 0;
+}
+.ppnl
+{
+    background: #fff;
+}
+.pn1, .pn2, .pn3
+{
+    float: left;
+    width: 33.3%;
+}
+.pn1
+{
+    background-color: #2ba3d4;
+}
+.pn2
+{
+    background-color: #2898c6;
+}
+.pn3
+{
+    background-color: #258db8;
+}
+
+
+.list
+{
+}
+.list li
+{
+    list-style: none;
+    text-align: center;
+}
+
+.clearfix:after
+{
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix
+{
+    display: inline-block;
+}
+
+html[xmlns] .clearfix
+{
+    display: block;
+}
+
+* html .clearfix
+{
+    height: 1%;
+}
+
+.demos
+{
+    width: 40%;
+    float: right;
+    margin-bottom: 20px;
+}
+.demos ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.demos ul li
+{
+    display: inline-block;
+    float: left;
+}
+.demos ul li a
+{
+    display: block;    
+    padding: 5px;
+    line-height: 20px;
+    background-color: #2ba3d4;
+    margin: 0px 5px;
+}
+.demos ul li a
+{
+    color: White;
+    text-decoration: none;
+    font-size:0.9em;
+}

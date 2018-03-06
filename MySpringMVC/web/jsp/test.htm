@@ -1,0 +1,183 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="utf-8">
+    <title>离校登记表</title>
+
+    <link rel="stylesheet" href="css/borain-timeChoice.css">
+    <!--font-awesome图标如果项目有就不用，如果没有就要调用-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/borain-timeChoice.js"></script>
+
+    <style>
+        .content{width: 100%; height: 100%; }
+        form{display:block; margin: 30px 20px;}
+        input{padding: 5px;}
+    </style>
+
+
+
+    <link href="../css/demo.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.fancy-textbox.js" type="text/javascript"></script>
+    <link href="../css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../css/fancy-textbox.css" rel="stylesheet" type="text/css" />
+    
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="../css/fancy-textbox-ie.css"/>
+    <![endif]-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input').ftext();
+        });
+    </script>
+</head>
+<body>
+<div align="right">
+<a href="/tologin">
+<button type="button" >管理员登录</button>
+</a>
+</div>
+<form action="/handlemessage" method="post">
+
+    <div class="ppnl">
+        <h1>
+            在线填表系统1.0.0.0</h1>
+        <h2>
+            by flybear</h2>
+        <input type="text" required data-animation="slide" id="week" name="week" data-label=本周周数 style="background: aliceblue"/>
+    </div>
+    <div class="clearfix">
+    </div>
+    <div class="pn1">
+        <ul class="list clearfix">
+            <li>
+                <input type="text" required data-animation="slide" id="grade" name="grade" data-label=&emsp;年级&emsp; data-mask="2015级"/>
+            </li>
+            <li>
+                <input type="text" required data-animation="slide" id="id" name="id" data-label=&emsp;学号&emsp; />
+            </li>
+
+            <li>
+                <input type="text" required data-animation="slide" id="name" name="name" data-label=&emsp;姓名&emsp; />
+            </li>
+
+            <li>
+                <input type="text" required list="itemlist1" data-animation="slide" id="area" name="area" data-label="住宿园区" />
+                <datalist id="itemlist1">
+                    <option value="东院">
+                    <option value="西院">
+                </datalist>
+            </li>
+
+            <li>
+                <input type="text" required data-animation="slide" id="dormitory" name="dormitory" data-label=&emsp;宿舍&emsp; data-mask="狮城250" />
+            </li>
+
+
+            <li>
+                <input type="text" required list="itemlist2" data-animation="slide" id="isleft" name="isleft" data-label="是否离汉" />
+                <datalist id="itemlist2">
+                    <option value="是">
+                    <option value="否">
+                </datalist>
+            </li>
+        </ul>
+    </div>
+    <div class="pn2">
+        <ul class="list clearfix">
+            <li>
+                <input type="text" required data-animation="slide" id="major" name="major" data-label=&emsp;专业&emsp; data-mask="自动化"/>
+            </li>
+            <li>
+                <input type="text" required data-animation="slide" id="aim" name="aim" data-label="目的地址" />
+            </li>
+
+            <li>
+                <input type="text" required data-animation="slide" id="reason" name="reason" data-label="请假理由" />
+            </li>
+
+            <li>
+                <input type="text" required data-animation="slide" id="phonenumber" name="phonenumber" data-label="本人号码" />
+            </li>
+
+            <li>
+                <input type="text" required data-animation="slide" id="emergencycontact" name="emergencycontact" data-label="紧急联系人" />
+            </li>
+
+            <li>
+                <input type="text" required data-animation="slide" id="emergencynumber" name="emergencynumber" data-label="联系方式" />
+            </li>
+
+        </ul>
+    </div>
+    <div class="pn3">
+        <ul class="list clearfix">
+            <li>
+                <input type="text" required data-animation="slide" id="classes" name="classes" data-label=&emsp;班级&emsp; />
+            </li>
+            <li>
+                <input type="text" required data-animation="slide" id="homecontact" name="homecontact" data-label="家庭联系人" />
+            </li>
+
+            <li>
+                <input type="text" required data-animation="slide" id="homenumber" name="homenumber" data-label="联系方式" />
+            </li>
+
+            <li>
+                <input type="text" required list="itemlist3" data-animation="slide" id="isinlib" name="isinlib" data-label="是否武汉库" />
+                <datalist id="itemlist3">
+                    <option value="是">
+                    <option value="否">
+                </datalist>
+            </li>
+
+            <li>
+                <input class="start"  required id="leavetime" name="leavetime" type="text" data-mask="离校时间">
+            </li>
+
+            <li>
+                <input class="start-two" required id="returntime" name="returntime" type="text" data-mask="返校时间">
+            </li>
+        </ul>
+    </div>
+    <div align="center">
+    <input type="submit" style=
+            "color: darksalmon;
+                        font-size: large;
+                        background: antiquewhite;
+                        height: 65px;
+                        width: 180px"
+           data-mask="提交" />
+    </div>
+
+</form>
+<script>
+    //  level分为 YM YMD H HM 四个有效值，分别表示年月 年月日 年月日时 年月日时分,less表示是否不可小于当前时间。年-月-日 时:分 时为24小时制
+    //  为确保控件结构只出现一次，在有需要的时候进行一次调用。
+    onLoadTimeChoiceDemo();
+
+    borainTimeChoice({
+        start:".start",
+        end:"",
+        level:"H",
+        less:false
+    });
+
+    borainTimeChoice({
+        start:".start-two",
+        end:"",
+        level:"H",
+        less:false
+    });
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+/*浮动预清除浮动*/ .fl { float: left; }
+.fr { float: right; }
+.clearFix:after { content: " "; display: block; clear: both; height: 0;}
+.clearFix { zoom: 1; } /*选择器遮罩*/
+.borain-timeChoiceMask { position: fixed; width: 100%; height: 100%; background-image: url(../images/mask-background.png); display: none; z-index: 98; top:0; left: 0; right: 0; bottom: 0;} /*选择器基本样式*/
+.borain-timeChoice { font: 12px/1.5 'Microsoft Yahei', 'Simsun'; position: fixed; z-index: 99; left: 250px; top: 150px !important; font-size: 0; vertical-align: top; display: none; }
+.borain-timeChoice .choiceBox { width: 252px; display: inline-block; vertical-align: top; }
+.borain-timeChoice .choiceBox .yearBox { font-size: 0; vertical-align: top; background: #ffffff; }
+.borain-timeChoice .choiceBox .yearBox .btn { display: inline-block; width: 40px; height: 40px; line-height: 40px; vertical-align: top; font-size: 24px; color: #888; text-align: center;}
+.borain-timeChoice .choiceBox .yearBox .btn:hover { color: #1699fe;}
+.borain-timeChoice .choiceBox .yearBox .showBox { display: inline-block; height: 40px; line-height: 40px; width: 172px; font-size: 14px; text-align: center; vertical-align: top; }
+.borain-timeChoice .choiceBox .yearBox .showBox a { color: #666; text-decoration: none; }
+.borain-timeChoice .choiceBox .yearBox .showBox a:hover { color: #333; }
+.borain-timeChoice .choiceBox .yearBox .showBox .active { color: #1699fe; }
+.borain-timeChoice .choiceBox .yearBox .showBox .active:hover { color: #1699fe; }
+.borain-timeChoice .choiceBox .beChoice { display: none; }
+.borain-timeChoice .choiceBox .choiceDayBox { padding: 7px; background: #ffffff; margin-top: 2px; display: block; }
+.borain-timeChoice .choiceBox .choiceDayBox div { font-size: 0; }
+.borain-timeChoice .choiceBox .choiceDayBox div span { display: inline-block; width: 26px; height: 22px; line-height: 22px; font-size: 12px; margin: 3px; text-align: center; cursor: pointer; border: 1px solid #ffffff; }
+.borain-timeChoice .choiceBox .choiceDayBox div .not { color: #878787; }
+.borain-timeChoice .choiceBox .choiceDayBox div .now { color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceDayBox div span:hover { border-color: #999999; }
+.borain-timeChoice .choiceBox .choiceDayBox div .ban { color: #999; }
+.borain-timeChoice .choiceBox .choiceDayBox .week span { width: 28px; height: 18px; line-height: 18px; border: none; cursor: auto; }
+.borain-timeChoice .choiceBox .choiceDayBox .day .active { border-color: #1699fe; color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceDayBox .day .nowDay { color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceYearBox { padding: 7px; background: #ffffff; margin-top: 2px; }
+.borain-timeChoice .choiceBox .choiceYearBox .yearTitle { height: 24px; vertical-align: top; }
+.borain-timeChoice .choiceBox .choiceYearBox .yearTitle span { font-size: 14px; color: #666; display: block; height: 24px; line-height: 24px; margin: 0 auto; width: 80px; margin-left: 54px; }
+.borain-timeChoice .choiceBox .choiceYearBox .yearTitle span em { color: #666; font-style: normal; }
+.borain-timeChoice .choiceBox .choiceYearBox .yearTitle .btn { display: block; width: 28px; height: 24px; line-height: 24px; font-size: 24px; text-align: center; color: #878787;}
+.borain-timeChoice .choiceBox .choiceYearBox .yearTitle .btn:hover { color: #1699fe;}
+.borain-timeChoice .choiceBox .choiceYearBox .year { margin-top: 5px; height: 175px; }
+.borain-timeChoice .choiceBox .choiceYearBox .year span { display: inline-block; width: 47.5px; height: 23px; line-height: 23px; border: 1px solid #ffffff; text-align: center; font-size: 12px; margin: 5px; cursor: pointer; color: #666666; }
+.borain-timeChoice .choiceBox .choiceYearBox .year span.not {  color: #999999; }
+.borain-timeChoice .choiceBox .choiceYearBox .year span.now {  color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceYearBox .year span:hover { border-color: #868686; }
+.borain-timeChoice .choiceBox .choiceYearBox .year .active { border-color: #1699fe; color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceYearBox .year .nowYear { color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceMinBox { margin-top: 2px; padding: 7px; background: #ffffff; }
+.borain-timeChoice .choiceBox .choiceMinBox .month span { display: inline-block; width: 47.5px; height: 30px; line-height: 30px; border: 1px solid #ffffff; text-align: center; font-size: 12px; margin: 5px; cursor: pointer; color: #666666; }
+.borain-timeChoice .choiceBox .choiceMinBox .month span em { color: #666; font-style: normal; }
+.borain-timeChoice .choiceBox .choiceMinBox .month .not { color: #999999; }
+.borain-timeChoice .choiceBox .choiceMinBox .month .not em{ color: #999999; }
+.borain-timeChoice .choiceBox .choiceMinBox .month .now { color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceMinBox .month .now em{ color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceMinBox .month .active { border-color: #1699fe; color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceMinBox .month .active em { color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceMinBox .month .nowMonth { color: #1699fe; }
+.borain-timeChoice .choiceBox .choiceMinBox .month .nowMonth em { color: #1699fe; }
+.borain-timeChoice .choiceBox .tipBox {font-size: 12px; background: #ffffff; margin-top: 2px; padding: 10px; color: #1699fe;}
+.borain-timeChoice .choiceBox .operateBox { display: none; }
+.borain-timeChoice .revealBox { display: inline-block; width: 190px; vertical-align: top; }
+.borain-timeChoice .revealBox .titleBox { height: 40px; font-size: 14px; background: #ffffff url("../images/reveal-background.png") repeat-y left; line-height: 40px; color: #666; text-indent: 12px; }
+.borain-timeChoice .revealBox .nowBox { margin-top: 2px; font-size: 0; color: #666666; background: #ffffff url("../images/reveal-background.png") repeat-y left; padding: 17px 10px; }
+.borain-timeChoice .revealBox .nowBox div { display: inline-block; vertical-align: top; }
+.borain-timeChoice .revealBox .nowBox div em { color: #1699fe; font-style: normal; display: inline-block; font-size: 14px; height: 15px; line-height: 15px; vertical-align: top; padding-top: 15px; }
+.borain-timeChoice .revealBox .nowBox div span { display: inline-block; font-size: 14px; height: 15px; line-height: 15px; vertical-align: top; padding-top: 15px; }
+.borain-timeChoice .revealBox .nowBox .nowDay { width: 65px; }
+.borain-timeChoice .revealBox .nowBox .nowDay em { font-size: 36px; height: 30px; line-height: 30px; padding-top: 0; margin-right: 5px; }
+.borain-timeChoice .revealBox .timeBox { background: #ffffff url("../images/reveal-background.png") repeat-y left; padding: 6px 5px 20px 5px; font-size: 0; display: none; }
+.borain-timeChoice .revealBox .timeBox div { display: inline-block; color: #868686; width: 50px; text-align: center; height: 76px; vertical-align: top; margin: 0 10px;}
+.borain-timeChoice .revealBox .timeBox div span { display: block; width: 50px; font-size: 24px; letter-spacing: 20px;}
+.borain-timeChoice .revealBox .timeBox .punctuation { padding: 26px 0; height: 24px; width: 20px;}
+.borain-timeChoice .revealBox .timeBox .punctuation em { display: block; width: 3px; height: 3px; background: #868686; border-radius: 50%; margin: 7px auto;}
+.borain-timeChoice .revealBox .timeBox div a { display: block; width: 48px; height: 18px; line-height: 18px; margin: 0 auto; font-size: 16px; border: 1px solid #878787; border-radius: 9px; color: #878787;}
+.borain-timeChoice .revealBox .timeBox div a:hover {border-color:#1699fe; color: #1699fe; }
+.borain-timeChoice .operateBox { background: #eeeeee; padding: 10px; font-size: 0;}
+.borain-timeChoice .revealBox .operateBox { background: #eeeeee url("../images/reveal-background.png") repeat-y left; padding: 15px 15px 15px 15px;}
+.borain-timeChoice .operateBox a { display: block; width: 48px; height: 20px; line-height: 20px; font-size: 12px; text-align: center; text-decoration: none; border: 1px solid; border-radius: 10px;}
+.borain-timeChoice .operateBox .submit {  color: #1699fe;}
+.borain-timeChoice .operateBox .submit:hover { background: #1699fe;  color: #ffffff;}
+.borain-timeChoice .operateBox .cancel { color: #999;}
+.borain-timeChoice .operateBox .cancel:hover { background: #878787; color: #ffffff;}
+/*年月选择样式*/
+.YM .choiceBox .choiceDayBox { display: none; }
+.YM .choiceBox .choiceYearBox { display: block; }
+.YM .choiceBox .operateBox { display: block; }
+.YM .revealBox { display: none;}
+/*年月日选择样式*/
+.YMD .revealBox .timeBox { display: none; }
+/*年月日时分选择样式*/
+.H .revealBox .timeBox { display: block; }
+.HM .revealBox .timeBox { display: block; }

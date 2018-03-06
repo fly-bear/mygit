@@ -1,0 +1,635 @@
+﻿/*General styles*/
+.fancy-textbox-wrapper
+{
+    display: inline-block;
+    position: relative;
+    margin: 30px 10px;
+}
+.fancy-textbox-wrapper input.masked
+{
+}
+
+/* textbox */
+input
+{
+    position: relative;
+    display: inline-block;
+    height: 25px;
+    max-width: 100%;
+    width: 215px;
+    padding: 10px 15px !important;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    color: #666;
+    border: 0;
+    outline: 0;
+    font-family: "Open Sans" , sans;
+    font-weight: 400;
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -o-transition: all linear .2s;
+    transition: all linear .2s;
+}
+label.label
+{
+    position: absolute;
+    display: inline-block;
+    padding: 15px 10px !important;
+    font-size: 14px;
+    font-weight: bold;
+    background: #82cff0;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    top: 0;
+    left: 0;
+    text-transform: uppercase;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -moz-transition: all linear .3s;
+    -o-transition: all .3s ease-in-out;
+    
+    -webkit-text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+    -moz-text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+    -o-text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+    text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+}
+
+/**************************************
+    clean slide
+/**************************************/
+.fancy-textbox-wrapper.clean-slide label
+{
+    background-color: transparent;
+    color: #82cff0;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+}
+
+/**************************************
+    gate
+/**************************************/
+.fancy-textbox-wrapper.gate label
+{
+    -webkit-transform-origin: left bottom;
+    -moz-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    -o-transform-origin: left bottom;
+    transform-origin: left bottom;
+    z-index: 99;
+}
+
+/**************************************
+    swing
+/**************************************/
+
+.fancy-textbox-wrapper.swing label
+{
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    transform-origin: left top;
+    z-index: 99;
+}
+
+/**************************************
+    balloon
+/**************************************/
+
+.fancy-textbox-wrapper.balloon label.arrow
+{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 100%;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid transparent;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+/**********************************
+    slide up
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.up input
+{
+    /*display: inline-block;     width: 215px;     padding: 12px 0 12px 15px;     margin-top: 0px;     font-family: "Open Sans" , sans;     font-weight: 400;     color: #377D6A;     border: 0;     outline: 0;     -webkit-transition: all .3s ease-in-out;     -moz-transition: all .3s ease-in-out;     -o-transition: all .3s ease-in-out;     transition: all .3s ease-in-out;*/
+}
+.fancy-textbox-wrapper.up label
+{
+    /*display: inline-block;     position: absolute;     top: 0;     left: 0;     padding: 10px 15px;     text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);     background: #82cff0;        -webkit-transition: all .3s ease-in-out;     -moz-transition: all .3s ease-in-out;     -o-transition: all .3s ease-in-out;     transition: all .3s ease-in-out;     color: #fff;*/
+}
+/**********************************
+    fade
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.fade input
+{
+    /*display: inline-block;     width: 215px;     padding: 12px 0 12px 15px;     margin-top: 0px;     font-family: "Open Sans" , sans;     font-weight: 400;     color: #377D6A;     border: 0;     outline: 0;     transition: all .3s ease-in-out;*/
+}
+.fancy-textbox-wrapper.fade label
+{
+    /*display: inline-block;     position: absolute;     top: 0;     left: 0;     padding: 10px 15px;     text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);     background: #82cff0;     transition: all .3s ease-in-out;     color: #fff;*/
+}
+/**********************************
+    scale
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.scale
+{
+    overflow: hidden;
+}
+.fancy-textbox-wrapper.scale input
+{
+    /*display: inline-block;     width: 215px;     padding: 12px 0 12px 15px;     margin-top: 0px;     font-family: "Open Sans" , sans;     font-weight: 400;     color: #377D6A;     border: 0;     outline: 0;     transition: all .3s ease-in-out;*/
+}
+.fancy-textbox-wrapper.scale label
+{
+    /*display: inline-block;     position: absolute;     top: 0;     left: 0;     padding: 10px 15px;     text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);     background: #82cff0;     transition: all .3s ease-in-out;     color: #fff;*/
+    
+}
+/**********************************
+    scale-down
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.scale-down
+{
+    overflow: hidden;
+}
+.fancy-textbox-wrapper.scale-down input
+{
+    /*display: inline-block;     width: 215px;     padding: 12px 0 12px 15px;     margin-top: 0px;     font-family: "Open Sans" , sans;     font-weight: 400;     color: #377D6A;     border: 0;     outline: 0;     text-indent: 60px;     transition: all .3s ease-in-out;*/
+}
+.fancy-textbox-wrapper.scale-down label
+{
+    /*display: inline-block;     position: absolute;     top: 0;     left: 0;     padding: 10px 15px;     transition: all .3s ease-in-out;     color: #fff;*/
+}
+/**********************************
+    rotate
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.rotate
+{
+    overflow: hidden;
+}
+.fancy-textbox-wrapper.rotate input
+{
+    /*display: inline-block;     width: 215px;     padding: 12px 0 12px 15px;     margin-top: 0px;     font-weight: 400;     border: 0;     outline: 0;     text-indent: 60px;     transition: all .3s ease-in-out;*/
+}
+.fancy-textbox-wrapper.rotate label
+{
+    /*display: inline-block;     position: absolute;     top: 0;     left: 0;     padding: 10px 15px;     text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);     transition: all .3s ease-in-out;     color: #fff;*/
+}
+/**********************************
+    rotate-3d
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.rotate-3d
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+}
+.fancy-textbox-wrapper.rotate-3d input
+{
+    /*display: inline-block;     width: 215px;     padding: 12px 0 12px 15px;     margin-top: 0px;     border: 0;     outline: 0;     text-indent: 60px;     transition: all .3s ease-in-out;*/
+}
+.fancy-textbox-wrapper.rotate-3d label
+{
+    /*display: inline-block;     position: absolute;     top: 0;     left: 0;     padding: 10px 15px;     text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);     color: #fff;*/
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    -o-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(0deg) translateY(0px);
+    -moz-transform: rotateX(0deg) translateY(0px);
+    transform: rotateX(0deg) translateY(0px);
+}
+
+.fancy-textbox-wrapper.rotate-3d label.hover, .fancy-textbox-wrapper.rotate-3d label.hover
+{
+    -webkit-transform: rotateX(90deg) translateY(-22px);
+    -moz-transform: rotateX(90deg) translateY(-22px);
+    -o-transform: rotateX(90deg) translateY(-22px);
+    transform: rotateX(90deg) translateY(-22px);
+}
+/**********************************
+    rotate-3d-down
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.rotate-3d-down
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+}
+.fancy-textbox-wrapper.rotate-3d-down input
+{
+}
+.fancy-textbox-wrapper.rotate-3d-down label
+{
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+.fancy-textbox-wrapper.rotate-3d-down label.hover, .fancy-textbox-wrapper.rotate-3d-down label.hover
+{
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+}
+
+/**********************************
+    rotate-3d-left
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.rotate-3d-left
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.fancy-textbox-wrapper.rotate-3d-left label
+{
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateY(0deg) translateX(0px);
+    -moz-transform: rotateY(0deg) translateX(0px);
+    transform: rotateY(0deg) translateX(0px);
+}
+
+.fancy-textbox-wrapper.rotate-3d-left label.hover, .fancy-textbox-wrapper.rotate-3d-left label.hover
+{
+    -webkit-transform: rotateY(-90deg) translateX(22px);
+    -moz-transform: rotateY(-90deg) translateX(22px);
+    transform: rotateY(-90deg) translateX(22px);
+}
+/**********************************
+    flip
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.flip
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.fancy-textbox-wrapper.flip label
+{
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+.fancy-textbox-wrapper.flip label.hover, .fancy-textbox-wrapper.flip label.hover
+{
+    -webkit-transform: rotateX(271deg);
+    -moz-transform: rotateX(271deg);
+    transform: rotateX(271deg);
+}
+/**********************************
+    flip-down
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.flip-down
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.fancy-textbox-wrapper.flip-down label
+{
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+.fancy-textbox-wrapper.flip-down label.hover, .fancy-textbox-wrapper.flip-down label.hover
+{
+    -webkit-transform: rotateX(-271deg);
+    -moz-transform: rotateX(-271deg);
+    transform: rotateX(-271deg);
+}
+/**********************************
+    flip-left
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.flip-left
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.fancy-textbox-wrapper.flip-left label
+{
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.fancy-textbox-wrapper.flip-left label.hover, .fancy-textbox-wrapper.flip-left label.hover
+{
+    -webkit-transform: rotateY(-262deg);
+    -moz-transform: rotateY(-262deg);
+    transform: rotateY(-262deg);
+}
+
+/**********************************
+    box-3d
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.box-3d
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+}
+.fancy-textbox-wrapper.box-3d .wrap-3d
+{
+    position: relative;
+    margin: 0 auto;
+    height: 40px;
+    width: 215px;
+    -webkit-transition: -webkit-transform .3s linear;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.fancy-textbox-wrapper.box-3d .face
+{
+    position: absolute;
+    height: 40px;
+    width: 215px; /*padding: 20px;*/
+    background-color: rgba(50, 50, 50, 0.7);
+}
+.fancy-textbox-wrapper.box-3d .wrap-3d .front
+{
+    -webkit-transform: translateZ(20px);
+    -moz-transform: translateZ(20px);
+    transform: translateZ(20px);
+}
+.fancy-textbox-wrapper.box-3d .wrap-3d .back
+{
+    -webkit-transform: rotateX(-90deg) translateZ(20px);
+    -moz-transform: rotateX(-90deg) translateZ(20px);
+    transform: rotateX(-90deg) translateZ(20deg);
+    top: 0;
+}
+.fancy-textbox-wrapper.box-3d:hover .wrap-3d
+{
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+}
+.fancy-textbox-wrapper.box-3d input
+{
+    width: 190px;
+}
+.fancy-textbox-wrapper.box-3d label
+{
+    width: 200px;
+}
+
+/**********************************
+    box-3d-up
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.box-3d-up
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+}
+.fancy-textbox-wrapper.box-3d-up .wrap-3d
+{
+    position: relative;
+    margin: 0 auto;
+    height: 40px;
+    width: 215px;
+    -webkit-transition: -webkit-transform .3s linear;
+    -moz-transition: -webkit-transform .3s linear;
+    transition: -webkit-transform .3s linear;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.fancy-textbox-wrapper.box-3d-up .face
+{
+    position: absolute;
+    height: 40px;
+    width: 215px; /*padding: 20px;*/
+    background-color: rgba(50, 50, 50, 0.7);
+}
+.fancy-textbox-wrapper.box-3d-up .wrap-3d .front
+{
+    -webkit-transform: translateZ(20px);
+    -moz-transform: translateZ(20px);
+    transform: translateZ(20px);
+}
+.fancy-textbox-wrapper.box-3d-up .wrap-3d .back
+{
+    -webkit-transform: rotateX(90deg) translateZ(20px);
+    -moz-transform: rotateX(90deg) translateZ(20px);
+    transform: rotateX(90deg) translateZ(20px);
+    top: 0;
+}
+.fancy-textbox-wrapper.box-3d-up:hover .wrap-3d
+{
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+}
+.fancy-textbox-wrapper.box-3d-up input
+{
+    width: 190px;
+}
+.fancy-textbox-wrapper.box-3d-up label
+{
+    width: 200px;
+}
+
+/**********************************
+    box-3d-in
+/*********************************/
+/*style the input box*/
+
+.fancy-textbox-wrapper.box-3d-in
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+}
+.fancy-textbox-wrapper.box-3d-in .wrap-3d
+{
+    position: relative;
+    margin: 0 auto;
+    height: 40px;
+    width: 215px;
+    -webkit-transition: -webkit-transform .3s linear;
+    -moz-transition: -webkit-transform .3s linear;
+    transition: -webkit-transform .3s linear;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.fancy-textbox-wrapper.box-3d-in .face
+{
+    position: absolute;
+    height: 40px;
+    width: 215px; /*padding: 20px;*/
+    background-color: rgba(50, 50, 50, 0.7);
+}
+.fancy-textbox-wrapper.box-3d-in .wrap-3d .front
+{
+    -webkit-transform: translateZ(100px);
+    -moz-transform: translateZ(100px);
+    transform: translateZ(100px);
+}
+.fancy-textbox-wrapper.box-3d-in .wrap-3d .back
+{
+    -webkit-transform: rotateY(-90deg) translateZ(100px);
+    -moz-transform: rotateY(-90deg) translateZ(100px);
+    transform: rotateY(-90deg) translateZ(100px);
+    top: 0;
+}
+.fancy-textbox-wrapper.box-3d-in:hover .wrap-3d
+{
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+}
+.fancy-textbox-wrapper.box-3d-in input
+{
+    width: 190px;
+}
+.fancy-textbox-wrapper.box-3d-in label
+{
+    width: 200px;
+}
+
+/**********************************
+    box-3d-out
+/*********************************/
+/*style the input box*/
+.fancy-textbox-wrapper.box-3d-out
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+}
+.fancy-textbox-wrapper.box-3d-out .wrap-3d
+{
+    position: relative;
+    margin: 0 auto;
+    height: 40px;
+    width: 215px;
+    -webkit-transition: -webkit-transform .3s linear;
+    -moz-transition: -webkit-transform .3s linear;
+    transition: -webkit-transform .3s linear;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.fancy-textbox-wrapper.box-3d-out .face
+{
+    position: absolute;
+    height: 40px;
+    width: 215px; /*padding: 20px;*/
+    background-color: rgba(50, 50, 50, 0.7);
+}
+.fancy-textbox-wrapper.box-3d-out .wrap-3d .front
+{
+    -webkit-transform: translateZ(100px);
+    -moz-transform: translateZ(100px);
+    transform: translateZ(100px);
+}
+.fancy-textbox-wrapper.box-3d-out .wrap-3d .back
+{
+    -webkit-transform: rotateY(90deg) translateZ(100px);
+    -moz-transform: rotateY(90deg) translateZ(100px);
+    transform: rotateY(90deg) translateZ(100px);
+    top: 0;
+}
+.fancy-textbox-wrapper.box-3d-out:hover .wrap-3d
+{
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+}
+.fancy-textbox-wrapper.box-3d-out input
+{
+    width: 190px;
+}
+.fancy-textbox-wrapper.box-3d-out label
+{
+    width: 200px;
+}
+
+/*general style for icons and labels*/
+.fancy-textbox-wrapper label.icon
+{
+    width: 40px;
+    height: 45px;
+    padding: 0px !important;
+    margin: 0px !important;
+    line-height: 45px;
+}

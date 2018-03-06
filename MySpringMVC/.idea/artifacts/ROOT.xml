@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ROOT">
+    <output-path>$PROJECT_DIR$/out/artifacts/ROOT</output-path>
+    <root id="archive" name="ROOT.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="MySpringMVC" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jsp-api" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.44-bin" />
+          <element id="library" level="project" name="Spring-4.3.14.RELEASE" />
+          <element id="library" level="project" name="Spring MVC-4.3.14.RELEASE" />
+          <element id="library" level="project" name="ezmorph-1.0.6" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="MySpringMVC/web/Web" />
+    </root>
+  </artifact>
+</component>

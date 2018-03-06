@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="ezmorph-1.0.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/ezmorph-1.0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-collections-3.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-beanutils-1.9.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/json-lib-2.4-jdk15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-lang-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jackson-all-2.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/aopalliance-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
