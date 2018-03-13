@@ -12,8 +12,19 @@
 <!--[if IE]>
 <script src="js/html5.js"></script>
 <![endif]-->
+
+	<script>
+		var msg='${message}';
+		function showmsg() {
+		    if(msg!="new")
+		    {
+		        alert(msg);
+            }
+
+        }
+	</script>
 </head>
-<body>
+<body onload="showmsg()">
 		<div class="container demo-1">
 			<div class="content">
 				<div id="large-header" class="large-header">
@@ -29,7 +40,9 @@
 								<span class="us_uer"></span>
 								<input name="logpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
 							</div>
-							<div class="mb2"><a class="act-but submit" onclick="f.submit()" href="javascript:;" style="color: #FFFFFF">登录</a></div>
+							<div class="mb2"><a class="act-but submit" onclick="f.submit()" href="javascript:;" style="color: #FFFFFF;width: 330px">登录</a>
+							</div>
+
 						</form>
 					</div>
 				</div>

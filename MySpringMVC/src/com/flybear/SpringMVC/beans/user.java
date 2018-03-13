@@ -1,8 +1,8 @@
-package com.flybear.SpringMVC.handlers;
+package com.flybear.SpringMVC.beans;
 
 
 import org.springframework.stereotype.Component;
-
+//这是定义登录信息
 @Component
 public class user {
     private String logname;

@@ -1,6 +1,6 @@
-package com.flybear.SpringMVC.handlers;
+package com.flybear.SpringMVC.beans;
 
-
+//这是定义前端提交查询的条件字段
 import org.springframework.stereotype.Component;
 
 @Component

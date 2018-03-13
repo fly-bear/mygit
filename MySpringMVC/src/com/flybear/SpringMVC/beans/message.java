@@ -1,5 +1,5 @@
-package com.flybear.SpringMVC.handlers;
-
+package com.flybear.SpringMVC.beans;
+//这是定义总的个人信息
 import org.springframework.stereotype.Component;
 
 @Component
@@ -23,6 +23,24 @@ public class message {
     private String homecontact;
     private String homenumber;
     private String isinlib;
+    private String spcid;
+    private String status;
+
+    public String getSpcid() {
+        return spcid;
+    }
+
+    public void setSpcid(String spcid) {
+        this.spcid = spcid;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getGrade() {
         return grade;

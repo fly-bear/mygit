@@ -1,5 +1,5 @@
-﻿
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
 
@@ -39,28 +39,55 @@
 </head>
 <body>
 <div align="right">
-<a href="/tologin">
-<button type="button" >管理员登录</button>
-</a>
+    <a href="/searchone">
+    <button type="button">查询数据</button>
+    </a>
+    <a href="/tologin">
+    <button type="button" >管理员登录</button>
+    </a>
 </div>
 <form action="/handlemessage" method="post">
 
     <div class="ppnl">
         <h1>
-            在线填表系统1.0.0.0</h1>
+            在线填表系统1.3.1</h1>
         <h2>
             by flybear</h2>
-        <input type="text" required data-animation="slide" id="week" name="week" data-label=本周周数 style="background: aliceblue"/>
+        <!--<input type="text" required list="itemlistweek"data-animation="slide" id="week" name="week" data-label=本周周数 style="background: aliceblue" pattern="\d{1,2}" />-->
+        <!--<datalist id="itemlistweek">-->
+            <!--<option value="0">-->
+            <!--<option value="1">-->
+            <!--<option value="2">-->
+            <!--<option value="3">-->
+            <!--<option value="4">-->
+            <!--<option value="5">-->
+            <!--<option value="6">-->
+            <!--<option value="7">-->
+            <!--<option value="8">-->
+            <!--<option value="9">-->
+            <!--<option value="10">-->
+            <!--<option value="11">-->
+            <!--<option value="12">-->
+            <!--<option value="13">-->
+            <!--<option value="14">-->
+            <!--<option value="15">-->
+            <!--<option value="16">-->
+            <!--<option value="17">-->
+            <!--<option value="18">-->
+            <!--<option value="19">-->
+            <!--<option value="20">-->
+
+        <!--</datalist>-->
     </div>
     <div class="clearfix">
     </div>
     <div class="pn1">
         <ul class="list clearfix">
             <li>
-                <input type="text" required data-animation="slide" id="grade" name="grade" data-label=&emsp;年级&emsp; data-mask="2015级"/>
+                <input type="text" required data-animation="slide" id="grade" name="grade" data-label=&emsp;年级&emsp; data-mask="2015级" pattern="2015级"/>
             </li>
             <li>
-                <input type="text" required data-animation="slide" id="id" name="id" data-label=&emsp;学号&emsp; />
+                <input type="text" required data-animation="slide" id="id" name="id" data-label=&emsp;学号&emsp; pattern="0\d{12}"/>
             </li>
 
             <li>
@@ -68,7 +95,7 @@
             </li>
 
             <li>
-                <input type="text" required list="itemlist1" data-animation="slide" id="area" name="area" data-label="住宿园区" />
+                <input type="text" required list="itemlist1" data-animation="slide" id="area" name="area" data-label="住宿园区" pattern="东院|西院"/>
                 <datalist id="itemlist1">
                     <option value="东院">
                     <option value="西院">
@@ -76,7 +103,7 @@
             </li>
 
             <li>
-                <input type="text" required data-animation="slide" id="dormitory" name="dormitory" data-label=&emsp;宿舍&emsp; data-mask="狮城250" />
+                <input type="text" required data-animation="slide" id="dormitory" name="dormitory" data-label=&emsp;宿舍&emsp; data-mask="例：狮城250" />
             </li>
 
 
@@ -92,7 +119,13 @@
     <div class="pn2">
         <ul class="list clearfix">
             <li>
-                <input type="text" required data-animation="slide" id="major" name="major" data-label=&emsp;专业&emsp; data-mask="自动化"/>
+                <input type="text" list="itemlistmajor" required data-animation="slide" id="major" name="major" data-label=&emsp;专业&emsp; data-mask="例：自动化 或 电气zy" pattern="(自动化|电气)(zy){0,1}"/>
+                <datalist id="itemlistmajor">
+                    <option value="自动化">
+                    <option value="电气">
+                    <option value="自动化zy">
+                    <option value="电气zy">
+                </datalist>
             </li>
             <li>
                 <input type="text" required data-animation="slide" id="aim" name="aim" data-label="目的地址" />
@@ -103,7 +136,7 @@
             </li>
 
             <li>
-                <input type="text" required data-animation="slide" id="phonenumber" name="phonenumber" data-label="本人号码" />
+                <input type="text" required data-animation="slide" id="phonenumber" name="phonenumber" data-label="本人号码" pattern="\d{11}"/>
             </li>
 
             <li>
@@ -111,7 +144,7 @@
             </li>
 
             <li>
-                <input type="text" required data-animation="slide" id="emergencynumber" name="emergencynumber" data-label="联系方式" />
+                <input type="text" required data-animation="slide" id="emergencynumber" name="emergencynumber" data-label="联系方式" pattern="\d{11}"/>
             </li>
 
         </ul>
@@ -119,14 +152,29 @@
     <div class="pn3">
         <ul class="list clearfix">
             <li>
-                <input type="text" required data-animation="slide" id="classes" name="classes" data-label=&emsp;班级&emsp; />
+                <input type="text" list="itemlistclass" required data-animation="slide" id="classes" name="classes" data-label=&emsp;班级&emsp; data-mask="例：自动化zy1501" pattern="(自动化|电气)(zy){0,1}15\d{2}"/>
+                <datalist id="itemlistclass">
+                    <option value="自动化1501">
+                    <option value="自动化1502">
+                    <option value="自动化1503">
+                    <option value="自动化1504">
+                    <option value="自动化1505">
+                    <option value="自动化zy1501">
+                    <option value="电气1501">
+                    <option value="电气1502">
+                    <option value="电气1503">
+                    <option value="电气1504">
+                    <option value="电气1505">
+                    <option value="电气1506">
+                    <option value="电气zy1501">
+                </datalist>
             </li>
             <li>
                 <input type="text" required data-animation="slide" id="homecontact" name="homecontact" data-label="家庭联系人" />
             </li>
 
             <li>
-                <input type="text" required data-animation="slide" id="homenumber" name="homenumber" data-label="联系方式" />
+                <input type="text" required data-animation="slide" id="homenumber" name="homenumber" data-label="联系方式" pattern="\d{11}"/>
             </li>
 
             <li>
@@ -138,11 +186,11 @@
             </li>
 
             <li>
-                <input class="start"  required id="leavetime" name="leavetime" type="text" data-mask="离校时间">
+                <input class="start"  required id="leavetime" name="leavetime" type="text" data-mask="点击选择离校时间" pattern="\d{4}-\d{1,2}-\d{1,2}\s\d{2}:\d{2}" />
             </li>
 
             <li>
-                <input class="start-two" required id="returntime" name="returntime" type="text" data-mask="返校时间">
+                <input class="start-two" required id="returntime" name="returntime" type="text" data-mask="点击选择返校时间" pattern="\d{4}-\d{1,2}-\d{1,2}\s\d{2}:\d{2}" />
             </li>
         </ul>
     </div>
@@ -153,7 +201,7 @@
                         background: antiquewhite;
                         height: 65px;
                         width: 180px"
-           data-mask="提交" />
+           data-mask="提交"/>
     </div>
 
 </form>

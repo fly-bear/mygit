@@ -1,9 +1,8 @@
-package com.flybear.SpringMVC.handlers;
+package com.flybear.SpringMVC.Dao;
 
-
-import org.springframework.beans.factory.annotation.Autowired;
+//这是表格提交
+import com.flybear.SpringMVC.beans.message;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 @Repository
-public class SaveMsg implements SaveMsgImple{
+public class SaveMsg implements SaveMsgImple {
     private Connection con; //声明Connection对象
     private String driver = "com.mysql.jdbc.Driver";//驱动程序名
     private String url = "jdbc:mysql://localhost:3306/lxdjb?useUnicode=true&characterEncoding=utf8";//URL指向要访问的数据库名mydata

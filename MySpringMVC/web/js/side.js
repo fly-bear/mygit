@@ -1,4 +1,4 @@
-var status = 1;
+var status = 0;
 var Menus = new DvMenuCls;
 
 document.onclick=Menus.Clear;

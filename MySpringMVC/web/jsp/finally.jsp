@@ -18,9 +18,124 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
     <link href="css/haiersoft.css" rel="stylesheet" type="text/css" media="screen,print" />
     <link href="css/print.css" rel="stylesheet" type="text/css"  media="print" />
+    <link rel="stylesheet" href="css/simpleAlert.css">
+
+    <script src="js/tanchu.min.js"></script>
+    <script src="js/simpleAlert.js"></script>
+
+
+
+    <script>
+
+        var result;
+        function display(data) {
+            var ul = document.createElement("ul");
+            ul.style="margin:50px;padding:10px";
+            for(var key in data[0]) {
+                var li = document.createElement("li");
+                li.innerHTML = key+" : "+data[0][key];
+                ul.appendChild(li)
+            }
+            result=ul.outerHTML;
+            detail(result);
+
+        }
+
+        function get(spcid) {
+            $.ajax({
+                type:"GET",
+                url:"/detail",
+                traditional:true,
+                data:{
+                    "spcid":spcid
+                },
+                success:function(data){
+                    display(data);
+                }
+            });
+        }
+        function detail(content) {
+            //单次单选弹框
+            var onlyChoseAlert = simpleAlert({
+                "content":content,
+                "buttons":{
+                    "确定":function () {
+                        onlyChoseAlert.close();
+                    }
+                }
+            })
+        }
+
+    </script>
 
 
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+
+
+
+    <script>
+
+        function changecheck() {
+            //给全选按钮加上点击事件
+            var xz = document.getElementById("checkall").checked;
+            var others=document.getElementsByName("checkbox");
+            for(var i=0;i<others.length;i++){
+                others[i].checked=xz;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        
+        function approve(statu) {
+            var box=document.getElementsByName("checkbox");
+            var spcid=new Array();
+            for( var i=0;i<box.length;i++) {
+                if (box[i].checked == true) {
+                spcid.push(box[i].value)
+            }
+            }
+            $.ajax({
+                type:"GET",
+                url:"/approve",
+                traditional:true,
+                data:{
+                    "spcid":spcid,
+                    "statu":statu
+                },
+                success:function(data){
+                    alert(data);
+                    requestJson();
+                }
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+
+        function deletedata(index){
+            if(confirm("确定删除这条数据？")) {
+                var data = '{"index":"' + index.toString() + '"}'
+                $.ajax({
+                    type: "post",
+                    url: "/delete",
+                    contentType: "application/json;charset=utf-8",
+                    // dataType:"text",
+
+                    data: data,
+
+
+                    success: function (data) {
+                        if (data == "ojbk") {
+                            alert("删除成功！")
+                            requestJson();
+                        } else {
+                            alert(data);
+                        }
+                    }
+                });
+            }
+        }
+    </script>
 
 
     <script type="text/javascript">
@@ -72,8 +187,12 @@
                 thead.appendChild(td);
             }
             var td=document.createElement("th");
-            td.innerHTML="<a>操作</a>";
+            td.innerHTML="<a name='approve'>审批</a>"+"<br />"+"<input type=\"checkbox\" id=\"checkall\" onclick='changecheck();'/>全选<br />";
             thead.appendChild(td)
+            var td=document.createElement("th");
+            td.innerHTML="<a name='delete'>操作</a>";
+            thead.appendChild(td)
+
             table.appendChild(thead);
             for ( var tableRowNo = 0; tableRowNo < jsonArray.length; tableRowNo++) {
                 var tr = document.createElement("tr");
@@ -82,8 +201,12 @@
                     cell.innerHTML = jsonArray[tableRowNo][headArray[headCount]];
                     tr.appendChild(cell);
                 }
+                var index=tr.childNodes[0].innerHTML;
                 var cell = document.createElement("td");
-                cell.innerHTML = "<a href='#'>删除</a>";
+                cell.innerHTML = "<input class='qx' type='checkbox' name='checkbox' value='"+index+"'></input>";
+                tr.appendChild(cell);
+                var cell = document.createElement("td");
+                cell.innerHTML = "<a href='javascript:void(0)' onclick='deletedata("+index+")'>删除</a>"+" / <a href='javascript:void(0)' onclick='get("+index+")'>详细信息</a>";
                 tr.appendChild(cell);
 
                 table.appendChild(tr);
@@ -110,71 +233,36 @@
 
 <body>
 <!-- wrap_left -->
-<div class="wrap_left" id="frmTitle" name="fmTitle">
-    <!-- Logo -->
-    <div id="Logo"><span>人单合一</span></div>
-    <!-- /Logo -->
+<%--<div class="wrap_left" id="frmTitle" name="fmTitle">--%>
+    <%--<!-- Logo -->--%>
+    <%--<div id="Logo"><span>人单合一</span></div>--%>
+    <%--<!-- /Logo -->--%>
 
-    <!-- menu_list -->
-    <script>
-        $(function() {
-            $(".menu_list dd");
-            $(".menu_list dt").click(function(){
-                $(this).toggleClass("open").next().slideToggle("fast");
-            });
-        });
-    </script>
-    <div class="menu_list">
-        <dl>
-            <dt><span>一级分类名称</span></dt>
-            <dd><a href="" title="二级分类">二级分类</a>
-                <a href="" title="二级分类">二级分类</a>
-                <a href="" title="二级分类" class="active">二级分类</a>
-                <a href="" title="二级分类">二级分类</a></dd>
+    <%--<!-- menu_list -->--%>
+    <%--<script>--%>
+        <%--$(function() {--%>
+            <%--$(".menu_list dd");--%>
+            <%--$(".menu_list dt").click(function(){--%>
+                <%--$(this).toggleClass("open").next().slideToggle("fast");--%>
+            <%--});--%>
+        <%--});--%>
+    <%--</script>--%>
+    <%--<div class="menu_list">--%>
+        <%--<dl>--%>
+            <%--<dt><span>一级分类名称</span></dt>--%>
+            <%--<dd><a href="" title="二级分类">二级分类</a>--%>
+                <%--<a href="" title="二级分类">二级分类</a>--%>
+                <%--<a href="" title="二级分类" class="active">二级分类</a>--%>
+                <%--<a href="" title="二级分类">二级分类</a></dd>--%>
 
-            <!--<dt><span>一级分类名称</span></dt>-->
-            <!--<dd><a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a></dd>-->
-
-            <!--<dt><span>一级分类名称</span></dt>-->
-            <!--<dd><a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a></dd>-->
-
-            <!--<dt><span>一级分类名称</span></dt>-->
-            <!--<dd><a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a></dd>-->
-
-            <!--<dt><span>一级分类名称</span></dt>-->
-            <!--<dd><a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a></dd>-->
-
-            <!--<dt><span>一级分类名称</span></dt>-->
-            <!--<dd><a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a></dd>-->
-
-            <!--<dt><span>一级分类名称</span></dt>-->
-            <!--<dd><a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a>-->
-            <!--<a href="" title="二级分类">二级分类</a></dd>-->
-        </dl>
-    </div>
-    <!-- /menu_list -->
-</div>
+        <%--</dl>--%>
+    <%--</div>--%>
+    <%--<!-- /menu_list -->--%>
+<%--</div>--%>
 <!-- /wrap_left -->
 
 <!-- picBox -->
-<div class="picBox" onclick="switchSysBar()" id="switchPoint"></div>
+<%--<div class="picBox" onclick="switchSysBar()" id="switchPoint"></div>--%>
 <!-- /picBox -->
 
 
@@ -202,7 +290,7 @@
             <nav>
                 <ul id="Navi">
 
-                    <li class="active"><a href=""><img src="images/common/navi03.png" width="26" height="36" alt="合同信息"><span>请假数据</span></a></li>
+                    <li class="active"><a href=""><img src="images/common/navi03.png" width="26" height="36" alt="请假数据"><span>请假数据</span></a></li>
 
                 </ul>
             </nav>
@@ -258,7 +346,9 @@
                     <dt id="major">全部</dt>
                     <dd><ul>
                         <li><a href="#">自动化</a></li>
+                        <li><a href="#">自动化zy</a></li>
                         <li><a href="#">电气</a></li>
+                        <li><a href="#">电气zy</a></li>
                         <li><a href="#">全部</a></li>
                     </ul></dd></dl>
             </div>
@@ -274,8 +364,6 @@
                         <li><a href="#">1504</a></li>
                         <li><a href="#">1505</a></li>
                         <li><a href="#">1506</a></li>
-                        <li><a href="#">zy1501</a></li>
-                        <li><a href="#">zy1601</a></li>
                         <li><a href="#">全部</a></li>
                     </ul></dd></dl>
             </div>
@@ -294,6 +382,9 @@
             <div id="div1" class="form_boxA">
 
                 <h2>请假名单</h2>
+                <div  style="float: right" class="btn_box floatL"><input style="background-color:darksalmon;" name="" type="button" value="签假条" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="approve('签假条')"></div>
+                <div  style="float: right" class="btn_box floatL"><input style="background-color:darksalmon;" name="" type="button" value="核实" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="approve('核实')"></div>
+                <div  style="float: right" class="btn_box floatL"><input style="background-color:darksalmon;" name="" type="button" value="批准" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="approve('批准')"></div>
                 <table id="data"></table>
 
             </div>

@@ -1,4 +1,8 @@
-int p1 = 4, p2 = 5, p3 = 6, p4 = 7;
+#define p1 6
+#define p2 7
+#define p3 8
+#define p4 9
+
 char sig;
 void setup() {
   pinMode(p1, OUTPUT);
