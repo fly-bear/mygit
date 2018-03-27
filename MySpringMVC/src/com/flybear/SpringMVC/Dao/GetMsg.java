@@ -64,7 +64,7 @@ public class GetMsg {
         }
 
 
-        String sql = "select spcid,week,classes,id,name,aim,reason,leavetime,returntime,status from mytable " + condition;
+        String sql = "select spcid,week,classes,id,name,aim,isinlib,reason,leavetime,returntime,status from mytable " + condition;
         ArrayList<Map> result = new ArrayList<>();
 
         try {
@@ -87,16 +87,17 @@ public class GetMsg {
 
             while (rs.next()) {
                 Map<String, String> tempmap = new LinkedHashMap<>();
-                tempmap.put("spcid", rs.getString("spcid"));
-                tempmap.put("week", rs.getString("week"));
-                tempmap.put("classes", rs.getString("classes"));
-                tempmap.put("id", rs.getString("id"));
-                tempmap.put("name", rs.getString("name"));
-                tempmap.put("aim", rs.getString("aim"));
-                tempmap.put("reason", rs.getString("reason"));
-                tempmap.put("leavetime", rs.getString("leavetime"));
-                tempmap.put("returntime", rs.getString("returntime"));
-                tempmap.put("status", rs.getString("status"));
+                tempmap.put("序列号", rs.getString("spcid"));
+                tempmap.put("周数", rs.getString("week"));
+                tempmap.put("班级", rs.getString("classes"));
+                tempmap.put("学号", rs.getString("id"));
+                tempmap.put("姓名", rs.getString("name"));
+                tempmap.put("目的地", rs.getString("aim"));
+                tempmap.put("武汉库",rs.getString("isinlib"));
+                tempmap.put("理由", rs.getString("reason"));
+                tempmap.put("离校时间", rs.getString("leavetime"));
+                tempmap.put("返校时间", rs.getString("returntime"));
+                tempmap.put("状态", rs.getString("status"));
                 result.add(tempmap);
             }
 

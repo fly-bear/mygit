@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: commons-beanutils-1.9.3.jar commons-collections-3.2.2.jar 
+ commons-lang-2.6.jar commons-logging-1.2.jar ezmorph-1.0.6.jar json-l
+ ib-2.4-jdk15.jar
+Main-Class: use.Main
+

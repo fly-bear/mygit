@@ -86,7 +86,7 @@
             var td=document.createElement("th");
             td.innerHTML="<a>操作</a>";
             thead.appendChild(td)
-            table.appendChild(thead);
+            table.appendChild(thead);/home/flybear/IdeaProjects/testyong
             for ( var tableRowNo = 0; tableRowNo < jsonArray.length; tableRowNo++) {
                 var tr = document.createElement("tr");
                 for ( var headCount = 0; headCount < headArray.length; headCount++) {

@@ -22,15 +22,51 @@
 
     <script src="js/tanchu.min.js"></script>
     <script src="js/simpleAlert.js"></script>
+    <script src="js/JsonExportExcel.min.js"></script>
 
 
+    <script>
+
+
+        function getout() {
+            var data='{\"spcid\":\"ALL\",\"week\":\"'+document.getElementById("week").innerHTML+'\",\"major\":\"'+document.getElementById("major").innerHTML+'\",\"classes\":\"'+document.getElementById("classes").innerHTML+'\"}';
+            $.ajax({
+                type:"POST",
+                url:"/detail",
+                contentType : "application/json;charset=utf-8",
+                traditional:true,
+                data:data,
+                success:function(data){
+                    outfile(data);
+                }
+            });
+        }
+
+        function outfile(data) {
+
+            var option = {};
+
+            option.fileName = '离校登记表';
+            option.datas = [
+                {
+                    sheetData: data,
+                    sheetName: 'sheet',
+                    sheetHeader: ['周数','年级','专业','班级','学号','姓名','园区','宿舍','目的地','请假原因','离校时间','返校时间','是否离汉','是否武汉库','本人联系方式',
+                        '紧急联系人','紧急联系人电话','家庭联系人','家庭联系人电话']
+                },
+            ];
+            var toExcel = new ExportJsonExcel(option);
+            toExcel.saveExcel();
+        }
+
+    </script><%--导出--%>
 
     <script>
 
         var result;
         function display(data) {
             var ul = document.createElement("ul");
-            ul.style="margin:50px;padding:10px";
+            ul.style="margin:30px;padding:10px";
             for(var key in data[0]) {
                 var li = document.createElement("li");
                 li.innerHTML = key+" : "+data[0][key];
@@ -42,13 +78,13 @@
         }
 
         function get(spcid) {
+            var data='{\"spcid\":\"'+spcid+'\",\"week\":\"'+document.getElementById("week").innerHTML+'\",\"major\":\"'+document.getElementById("major").innerHTML+'\",\"classes\":\"'+document.getElementById("classes").innerHTML+'\"}';
             $.ajax({
-                type:"GET",
+                type:"POST",
+                contentType : "application/json;charset=utf-8",
                 url:"/detail",
                 traditional:true,
-                data:{
-                    "spcid":spcid
-                },
+                data:data,
                 success:function(data){
                     display(data);
                 }
@@ -66,7 +102,7 @@
             })
         }
 
-    </script>
+    </script><%--详细信息--%>
 
 
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
@@ -83,9 +119,15 @@
                 others[i].checked=xz;
             }
         }
-    </script>
+    </script><%--全选--%>
     <script type="text/javascript">
-        
+        function reason() {
+            var temp = window.prompt("请输入理由：", "");
+            if (temp != null){
+                var myreason = "不批准：" + temp;
+                approve(myreason);
+            }
+        }
         function approve(statu) {
             var box=document.getElementsByName("checkbox");
             var spcid=new Array();
@@ -108,7 +150,7 @@
                 }
             });
         }
-    </script>
+    </script><%--审批--%>
 
     <script type="text/javascript">
 
@@ -135,7 +177,7 @@
                 });
             }
         }
-    </script>
+    </script><%--删除数据--%>
 
 
     <script type="text/javascript">
@@ -206,7 +248,7 @@
                 cell.innerHTML = "<input class='qx' type='checkbox' name='checkbox' value='"+index+"'></input>";
                 tr.appendChild(cell);
                 var cell = document.createElement("td");
-                cell.innerHTML = "<a href='javascript:void(0)' onclick='deletedata("+index+")'>删除</a>"+" / <a href='javascript:void(0)' onclick='get("+index+")'>详细信息</a>";
+                cell.innerHTML = "<a href='javascript:void(0)' onclick='deletedata("+index+")'>删除</a>"+" / <a href='javascript:void(0)' onclick='get("+index+")'>详细</a>";
                 tr.appendChild(cell);
 
                 table.appendChild(tr);
@@ -219,7 +261,7 @@
             div.appendChild(msg);
         }
 
-    </script>
+    </script><%--生成表格--%>
 
 
     <script src="js/jquery-1.10.1.min.js"></script>
@@ -232,40 +274,6 @@
 </head>
 
 <body>
-<!-- wrap_left -->
-<%--<div class="wrap_left" id="frmTitle" name="fmTitle">--%>
-    <%--<!-- Logo -->--%>
-    <%--<div id="Logo"><span>人单合一</span></div>--%>
-    <%--<!-- /Logo -->--%>
-
-    <%--<!-- menu_list -->--%>
-    <%--<script>--%>
-        <%--$(function() {--%>
-            <%--$(".menu_list dd");--%>
-            <%--$(".menu_list dt").click(function(){--%>
-                <%--$(this).toggleClass("open").next().slideToggle("fast");--%>
-            <%--});--%>
-        <%--});--%>
-    <%--</script>--%>
-    <%--<div class="menu_list">--%>
-        <%--<dl>--%>
-            <%--<dt><span>一级分类名称</span></dt>--%>
-            <%--<dd><a href="" title="二级分类">二级分类</a>--%>
-                <%--<a href="" title="二级分类">二级分类</a>--%>
-                <%--<a href="" title="二级分类" class="active">二级分类</a>--%>
-                <%--<a href="" title="二级分类">二级分类</a></dd>--%>
-
-        <%--</dl>--%>
-    <%--</div>--%>
-    <%--<!-- /menu_list -->--%>
-<%--</div>--%>
-<!-- /wrap_left -->
-
-<!-- picBox -->
-<%--<div class="picBox" onclick="switchSysBar()" id="switchPoint"></div>--%>
-<!-- /picBox -->
-
-
 
 <!-- wrap_right -->
 <div class="wrap_right">
@@ -334,6 +342,21 @@
                         <li><a href="#">3</a></li>
                         <li><a href="#">4</a></li>
                         <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                        <li><a href="#">11</a></li>
+                        <li><a href="#">12</a></li>
+                        <li><a href="#">13</a></li>
+                        <li><a href="#">14</a></li>
+                        <li><a href="#">15</a></li>
+                        <li><a href="#">16</a></li>
+                        <li><a href="#">17</a></li>
+                        <li><a href="#">18</a></li>
+                        <li><a href="#">19</a></li>
+                        <li><a href="#">20</a></li>
                         <li><a href="#">全部</a></li>
                     </ul></dd></dl>
             </div>
@@ -370,7 +393,9 @@
             <!-- /selectbox -->
 
             <!-- btn_box -->
-            <div class="btn_box floatL"><input name="" type="button" value="查询" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="requestJson();"></div>
+            <div class="btn_box floatL"><input name="" type="button" value="查询" style="margin: 3px" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="requestJson();"></div>
+            &nbsp;
+            <div class="btn_box floatL"><input name="" type="button" value="导出" style="margin: 3px" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="getout();"></div>
             <!-- /btn_box -->
         </div>
         <!-- /TopMain -->
@@ -382,9 +407,10 @@
             <div id="div1" class="form_boxA">
 
                 <h2>请假名单</h2>
-                <div  style="float: right" class="btn_box floatL"><input style="background-color:darksalmon;" name="" type="button" value="签假条" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="approve('签假条')"></div>
-                <div  style="float: right" class="btn_box floatL"><input style="background-color:darksalmon;" name="" type="button" value="核实" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="approve('核实')"></div>
-                <div  style="float: right" class="btn_box floatL"><input style="background-color:darksalmon;" name="" type="button" value="批准" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="approve('批准')"></div>
+                <div  style="float: right" class="btn_box floatL"><input style="background-color:darksalmon;margin: 3px" name="" type="button" value="不批准" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="reason()"></div>
+                <div  style="float: right" class="btn_box floatL"><input style="background-color:darksalmon;margin: 3px" name=""  type="button" value="签假条" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="approve('签假条')"></div>
+                <div  style="float: right" class="btn_box floatL"><input style="background-color:darksalmon;margin: 3px" name=""  type="button" value="核实" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="approve('核实')"></div>
+                <div  style="float: right" class="btn_box floatL"><input style="background-color:darksalmon;margin: 3px" name=""  type="button" value="批准" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="approve('批准')"></div>
                 <table id="data"></table>
 
             </div>

@@ -28,7 +28,7 @@ public class handlemessage {
     @RequestMapping("/handlemessage")
     public ModelAndView handle(message msg, @RequestHeader("Referer") String referer){
 //        if(referer.equals("http://bear.flybear.wang:8080/form")) {
-        if(referer.equals("http://localhost:8080/form")) {
+        if(referer.equals("http://localhost:8080/form") || referer.equals("http://bear.flybear.wang:8080/form")) {
             String dateStr = "2018-2-26 00:00:00";
             Date now=new Date();
             String dateStr2 = now.toString();

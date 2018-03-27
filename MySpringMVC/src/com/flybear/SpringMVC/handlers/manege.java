@@ -51,8 +51,8 @@ public class manege {
     com.flybear.SpringMVC.Dao.GetAllMsg getAllMsg;
     @ResponseBody
     @RequestMapping(value = "/detail",produces = "application/json;charset=utf-8")
-    public List approve(String spcid){
-        return getAllMsg.Getmsg(spcid);
+    public List approve(@RequestBody MyRequest p){
+        return getAllMsg.Getmsg(p);
     }
 
 }

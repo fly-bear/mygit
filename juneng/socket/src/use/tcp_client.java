@@ -41,10 +41,19 @@ public class tcp_client {
             StringBuilder ret=new StringBuilder();
             while(!flag) {
                 byte[] a = new byte[1024];
-                int b = 0;
-                b = input.read(a);
+                input.read(a);
                 //利用正则表达式去除空白字符
-                String temp = new String(a, "UTF-8");
+
+                int find=a.length-1;
+                for(int i=a.length-1;i>=0;i--){
+                    find=i;
+                    if(a[i]!=0) {
+                        break;
+                    }
+                }
+                byte[] b=new byte[find+1];
+                System.arraycopy(a, 0, b, 0, find+1);
+                String temp = new String(b, "UTF-8");
                 String patt = "SEND_STOP.*";
                 //利用正则表达式去除空白字符
                 Pattern r = Pattern.compile(patt);

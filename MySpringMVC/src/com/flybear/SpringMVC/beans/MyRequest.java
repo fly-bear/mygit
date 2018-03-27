@@ -8,6 +8,15 @@ public class MyRequest {
     private String week;
     private String major;
     private String classes;
+    private String spcid;
+
+    public String getSpcid() {
+        return spcid;
+    }
+
+    public void setSpcid(String spcid) {
+        this.spcid = spcid;
+    }
 
     public void setClasses(String classes) {
         this.classes = classes;

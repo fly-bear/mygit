@@ -1,5 +1,6 @@
 package com.flybear.SpringMVC.Dao;
 
+import com.flybear.SpringMVC.beans.MyRequest;
 import org.omg.PortableServer.LIFESPAN_POLICY_ID;
 import org.springframework.stereotype.Repository;
 
@@ -16,9 +17,50 @@ public class GetAllMsg {
     private String url = "jdbc:mysql://localhost:3306/lxdjb?useUnicode=true&characterEncoding=utf8";//URL指向要访问的数据库名mydata
     private String user = "root";
     private String password = "hyggbgb";//MySQL配置时的密码
-    public List Getmsg(String spcid){
+    public List Getmsg(MyRequest p){
+
+        String spcid=p.getSpcid();
+        String week = p.getWeek();
+        String major = p.getMajor();
+        String classes = p.getClasses();
+        String condition1;
+        String condition2;
+        String condition3;
+        String condition="where ";
+
+        if(week.equals("全部")){
+            condition1="";
+        }
+        else {
+            condition1=" and week="+week;
+        }
+        if(major.equals("全部")){
+            condition2="";
+        }
+        else{
+            condition2=" and major=\""+major+"\"";
+        }
+        if(classes.equals("全部")){
+            condition3="";
+        }
+        else{
+            condition3=" and classes=\""+major+classes+"\"";
+        }
+
+        if(!condition1.equals("")){
+                condition=condition+condition1.substring(5)+condition2+condition3;
+        } else if(!condition2.equals("")){
+                condition=condition+condition2.substring(5)+condition3;
+        } else if(!condition3.equals("")) {
+            condition = condition + condition3.substring(5);
+        }else{
+            condition="";
+        }
 
         String sql = "select * from mytable where spcid=" + spcid;
+        if (spcid.equals("ALL")){
+            sql="SELECT * FROM mytable "+condition;
+        }
         ArrayList<Map> result = new ArrayList<>();
 
         try {
@@ -41,10 +83,13 @@ public class GetAllMsg {
 
             while (rs.next()) {
                 Map<String, String> tempmap = new LinkedHashMap<>();
+                tempmap.put("周数",rs.getString("week"));
                 tempmap.put("年级", rs.getString("grade"));
+                tempmap.put("专业",rs.getString("major"));
                 tempmap.put("班级", rs.getString("classes"));
                 tempmap.put("学号", rs.getString("id"));
                 tempmap.put("姓名", rs.getString("name"));
+                tempmap.put("园区",rs.getString("area"));
                 tempmap.put("宿舍", rs.getString("dormitory"));
                 tempmap.put("目的地", rs.getString("aim"));
                 tempmap.put("请假原因", rs.getString("reason"));

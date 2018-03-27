@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact name="socket:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/socket_jar</output-path>
+    <root id="root">
+      <element id="archive" name="socket.jar">
+        <element id="module-output" name="socket" />
+      </element>
+      <element id="library" level="project" name="commons-beanutils-1.9.3" />
+      <element id="library" level="project" name="json-lib-2.4-jdk15" />
+    </root>
+  </artifact>
+</component>

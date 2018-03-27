@@ -35,6 +35,7 @@ import java.util.Scanner;
  *                     佛祖保佑        永无BUG
  **/
 public class tcp_client_shell {
+
     private static String recieve(DataInputStream input) {
         try {
             Boolean flag=false;
@@ -43,7 +44,17 @@ public class tcp_client_shell {
                 byte[] a = new byte[1024];
                 input.read(a);
                 //利用正则表达式去除空白字符
-                String temp = new String(a, "UTF-8");
+
+                int find=a.length-1;
+                for(int i=a.length-1;i>=0;i--){
+                    find=i;
+                    if(a[i]!=0) {
+                        break;
+                    }
+                }
+                byte[] b=new byte[find+1];
+                System.arraycopy(a, 0, b, 0, find+1);
+                String temp = new String(b, "UTF-8");
                 String patt = "SEND_STOP.*";
                 //利用正则表达式去除空白字符
                 Pattern r = Pattern.compile(patt);
@@ -68,6 +79,7 @@ public class tcp_client_shell {
             DataInputStream input = new DataInputStream(socket.getInputStream());
             //向服务器端发送数据
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+
         try {
 
             //读取服务器端数据
@@ -127,9 +139,13 @@ public class tcp_client_shell {
         }catch (Exception e){//连接出问题
             System.out.println("收发或数据异常:" + e.getMessage());
             out.write(("close_connect" + "SEND_STOP").getBytes("UTF-8"));
-        }
+        }finally {
+            out.write(("close_connect" + "SEND_STOP").getBytes("UTF-8"));
             out.close();
             input.close();
+
+        }
+
         } catch (Exception e) {
             System.out.println("连接异常:" + e.getMessage());
         } finally {
