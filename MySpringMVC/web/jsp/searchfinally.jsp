@@ -18,22 +18,83 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
     <link href="css/haiersoft.css" rel="stylesheet" type="text/css" media="screen,print" />
     <link href="css/print.css" rel="stylesheet" type="text/css"  media="print" />
-
-
+    <link rel="stylesheet" href="css/simpleAlert.css">
 
     <script src="js/tanchu.min.js"></script>
     <script src="js/simpleAlert.js"></script>
+    <script src="js/JsonExportExcel.min.js"></script>
 
 
+
+    <script>
+
+        var result;
+        function display(data) {
+            var ul = document.createElement("ul");
+            ul.style="margin:30px;padding:10px";
+            for(var key in data[0]) {
+                var li = document.createElement("li");
+                li.innerHTML = key+" : "+data[0][key];
+                ul.appendChild(li)
+            }
+            result=ul.outerHTML;
+            detail(result);
+
+        }
+
+        function get(spcid) {
+            var data='{\"spcid\":\"'+spcid+'\",\"week\":\"'+document.getElementById("week").innerHTML+'\",\"major\":\"'+document.getElementById("major").innerHTML+'\",\"classes\":\"'+document.getElementById("classes").innerHTML+'\"}';
+            $.ajax({
+                type:"POST",
+                contentType : "application/json;charset=utf-8",
+                url:"/detail",
+                traditional:true,
+                data:data,
+                success:function(data){
+                    display(data);
+                }
+            });
+        }
+        function detail(content) {
+            //单次单选弹框
+            var onlyChoseAlert = simpleAlert({
+                "content":content,
+                "buttons":{
+                    "确定":function () {
+                        onlyChoseAlert.close();
+                    }
+                }
+            })
+        }
+
+    </script><%--详细信息--%>
 
 
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
 
+
+
     <script>
-        function foo() {
-            alert("想要删除数据吗？想都别想！\n还是找生活委员吧")
+
+        function changecheck() {
+            //给全选按钮加上点击事件
+            var xz = document.getElementById("checkall").checked;
+            var others=document.getElementsByName("checkbox");
+            for(var i=0;i<others.length;i++){
+                others[i].checked=xz;
+            }
         }
-    </script>
+    </script><%--全选--%>
+
+    <script type="text/javascript">
+
+        function deletedata(index){
+            if(confirm("确定删除这条数据？")) {
+                alert("删什么删，去找生活委员删！")
+            }
+        }
+    </script><%--删除数据--%>
+
 
     <script type="text/javascript">
 
@@ -83,10 +144,12 @@
                 td.innerHTML = headArray[count];
                 thead.appendChild(td);
             }
+
             var td=document.createElement("th");
-            td.innerHTML="<a>操作</a>";
+            td.innerHTML="<a name='delete'>操作</a>";
             thead.appendChild(td)
-            table.appendChild(thead);/home/flybear/IdeaProjects/testyong
+
+            table.appendChild(thead);
             for ( var tableRowNo = 0; tableRowNo < jsonArray.length; tableRowNo++) {
                 var tr = document.createElement("tr");
                 for ( var headCount = 0; headCount < headArray.length; headCount++) {
@@ -96,7 +159,7 @@
                 }
                 var index=tr.childNodes[0].innerHTML;
                 var cell = document.createElement("td");
-                cell.innerHTML = "<a href='javascript:void(0)' onclick='deletedata("+index+")'>删除</a>";
+                cell.innerHTML = "<a href='javascript:void(0)' onclick='deletedata("+index+")'>删除</a>"+" / <a href='javascript:void(0)' onclick='get("+index+")'>详细</a>";
                 tr.appendChild(cell);
 
                 table.appendChild(tr);
@@ -109,7 +172,7 @@
             div.appendChild(msg);
         }
 
-    </script>
+    </script><%--生成表格--%>
 
 
     <script src="js/jquery-1.10.1.min.js"></script>
@@ -120,7 +183,6 @@
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
 </head>
-
 <body>
 
 <!-- /wrap_left -->
@@ -193,59 +255,33 @@
                         <li><a href="#">1</a></li>
                         <li><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
-                        <li><  <script src="js/tanchu.min.js"></script>
-    <script src="js/simpleAlert.js"></script>
-
-
-
-    <script>
-
-        var result;
-        function display(data) {
-            var ul = document.createElement("ul");
-            ul.style="margin:50px;padding:10px";
-            for(var key in data[0]) {
-                var li = document.createElement("li");
-                li.innerHTML = key+" : "+data[0][key];
-                ul.appendChild(li)
-            }
-            result=ul.outerHTML;
-            detail(result);
-
-        }
-
-        function get(spcid) {
-            $.ajax({
-                type:"GET",
-                url:"/detail",
-                traditional:true,
-                data:{
-                    "spcid":spcid
-                },
-                success:function(data){
-                    display(data);
-                }
-            });
-        }
-        function detail(content) {
-            //单次单选弹框
-            var onlyChoseAlert = simpleAlert({
-                "content":content,
-                "buttons":{
-                    "确定":function () {
-                        onlyChoseAlert.close();
-                    }
-                }
-            })
-        }
-
-    </script>
-a href="#">4</a></li>
+                        <li><a href="#">4</a></li>
                         <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                        <li><a href="#">11</a></li>
+                        <li><a href="#">12</a></li>
+                        <li><a href="#">13</a></li>
+                        <li><a href="#">14</a></li>
+                        <li><a href="#">15</a></li>
+                        <li><a href="#">16</a></li>
+                        <li><a href="#">17</a></li>
+                        <li><a href="#">18</a></li>
+                        <li><a href="#">19</a></li>
+                        <li><a href="#">20</a></li>
                         <li><a href="#">全部</a></li>
                     </ul></dd></dl>
             </div>
             <!-- /selectbox -->
+
+
+
+
+
+
 
             <!-- selectbox -->
             <div class="selectbox floatL mag_r20">
@@ -278,7 +314,7 @@ a href="#">4</a></li>
             <!-- /selectbox -->
 
             <!-- btn_box -->
-            <div class="btn_box floatL"><input name="" type="button" value="查询" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="requestJson();"></div>
+            <div class="btn_box floatL"><input name="" type="button" value="查询" style="margin: 3px" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="requestJson();"></div>
             <!-- /btn_box -->
         </div>
         <!-- /TopMain -->

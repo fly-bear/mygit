@@ -48,7 +48,7 @@ public class GuestGetMsg {
         condition=condition+"name='"+logname+"'"+" and id='"+logpass+"'"+condition1+condition2+condition3;
 
 
-        String sql = "select week,classes,id,name,aim,reason,leavetime,returntime,status from mytable " + condition;
+        String sql = "select spcid,week,classes,id,name,aim,reason,leavetime,returntime,status from mytable " + condition;
         ArrayList<Map> result = new ArrayList<>();
 
         try {
@@ -71,6 +71,7 @@ public class GuestGetMsg {
 
             while (rs.next()) {
                 Map<String, String> tempmap = new LinkedHashMap<>();
+                tempmap.put("spcid",rs.getString("spcid"));
                 tempmap.put("week", rs.getString("week"));
                 tempmap.put("classes", rs.getString("classes"));
                 tempmap.put("id", rs.getString("id"));
