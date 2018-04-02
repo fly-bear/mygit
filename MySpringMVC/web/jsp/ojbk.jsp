@@ -12,10 +12,15 @@
     <title>ojbk</title>
 </head>
 <body>
-
 <h1 align="center">
 ${message}
+    <br>
+    请返回首页查询核对信息
 </h1>
+<div align="center">
+    <a href="http://bear.flybear.wang:8080/form">返回首页</a>
+</div>
+
 
 </body>
 </html>

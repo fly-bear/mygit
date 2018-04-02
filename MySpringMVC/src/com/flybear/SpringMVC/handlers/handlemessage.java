@@ -24,25 +24,32 @@ public class handlemessage {
 
     @Autowired
     private com.flybear.SpringMVC.Dao.SaveMsg SaveMsg;
+    @Autowired
+    private com.flybear.SpringMVC.Dao.CheckStatu checkStatu;
 
     @RequestMapping("/handlemessage")
     public ModelAndView handle(message msg, @RequestHeader("Referer") String referer){
 //        if(referer.equals("http://bear.flybear.wang:8080/form")) {
+        String result="";
         if(referer.equals("http://localhost:8080/form") || referer.equals("http://bear.flybear.wang:8080/form")) {
-            String dateStr = "2018-2-26 00:00:00";
-            Date now=new Date();
-            String dateStr2 = now.toString();
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            try
-            {
+            int statu=checkStatu.check();
+            if(statu==1) {
+                String dateStr = "2018-2-26 00:00:00";
+                Date now = new Date();
+                String dateStr2 = now.toString();
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                try {
 //                Date date2 = format.parse(dateStr2);
-                Date date = format.parse(dateStr);
-                msg.setWeek(String.valueOf(differentDaysByMillisecond(date,now)));
+                    Date date = format.parse(dateStr);
+                    msg.setWeek(String.valueOf(differentDaysByMillisecond(date, now)));
 //                System.out.println("两个日期的差距：" + differentDaysByMillisecond(date,now));
-            } catch (ParseException e) {
-                e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                result = SaveMsg.SaveMessage(msg);
+            }else {
+                result = "提交失败！<br>不在规定时间内";
             }
-            String result = SaveMsg.SaveMessage(msg);
             ModelAndView mad = new ModelAndView("ojbk");
             mad.addObject("message", result);
             return mad;

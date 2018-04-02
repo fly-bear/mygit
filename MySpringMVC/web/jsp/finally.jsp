@@ -108,6 +108,42 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
 
 
+    <script type="text/javascript">
+        function openstatu() {
+            if (confirm("确定允许？")){
+                $.ajax({
+                    type: "post",
+                    url: "/changestatu",
+                    contentType: "application/json;charset=utf-8",
+                    // dataType:"text",
+                    scriptCharset: 'utf-8',
+                    data: '{"statu":"1"}',
+
+                    success: function (data) {
+                        alert(data);
+                    }
+                });
+            }
+        }
+
+        function closestatu() {
+            if (confirm("确定关闭？")){
+                $.ajax({
+                    type: "post",
+                    url: "/changestatu",
+                    contentType: "application/json;charset=utf-8",
+                    scriptCharset: 'utf-8',
+                    // dataType:"text",
+
+                    data: '{"statu":"0"}',
+
+                    success: function (data) {
+                        alert(data);
+                    }
+                });
+            }
+        }
+    </script><%--打开/关闭提交允许--%>
 
     <script>
 
@@ -156,7 +192,7 @@
 
         function deletedata(index){
             if(confirm("确定删除这条数据？")) {
-                var data = '{"index":"' + index.toString() + '"}'
+                var data = '{"index":"' + index.toString() + '"}';
                 $.ajax({
                     type: "post",
                     url: "/delete",
@@ -168,7 +204,7 @@
 
                     success: function (data) {
                         if (data == "ojbk") {
-                            alert("删除成功！")
+                            alert("删除成功！");
                             requestJson();
                         } else {
                             alert(data);
@@ -396,6 +432,10 @@
             <div class="btn_box floatL"><input name="" type="button" value="查询" style="margin: 3px" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="requestJson();"></div>
             &nbsp;
             <div class="btn_box floatL"><input name="" type="button" value="导出" style="margin: 3px" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="getout();"></div>
+            &nbsp;
+            <div style="float: right" class="btn_box floatL"><input name="" type="button" value="允许提交" style="background-color: cornflowerblue;margin: 3px" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="openstatu();"></div>
+            &nbsp;
+            <div style="float: right" class="btn_box floatL"><input name="" type="button" value="关闭提交" style="background-color: cornflowerblue;margin: 3px" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" onclick="closestatu();"></div>
             <!-- /btn_box -->
         </div>
         <!-- /TopMain -->
