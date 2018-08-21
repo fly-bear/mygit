@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!--SPring JDBC模块+AOP使用  -->
+    <!--加载数据库的连接配置文件 -->
+    <context:property-placeholder location="classpath:dbconfig.properties" />
+    <!--配置数据库来连接池 -->
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!--驱动类全称 -->
+        <property name="driverClassName" value="${jdbc.driverClassName}" />
+        <!--数据库的url地址 -->
+        <property name="url" value="${jdbc.url}" />
+        <!--用户名 -->
+        <property name="username" value="${jdbc.username}" />
+        <!--密码 -->
+        <property name="password" value="${jdbc.password}" />
+        <!--&lt;!&ndash;配置最大的连接数 &ndash;&gt;-->
+        <!--<property name="maxPoolSize" value="${jdbc.maxsize}"></property>-->
+        <!--&lt;!&ndash;配置最小的连接数 &ndash;&gt;-->
+        <!--<property name="minPoolSize" value="${jdbc.minsize}"></property>-->
+        <!--&lt;!&ndash;配置连接最大空闲时间 &ndash;&gt;-->
+        <!--<property name="maxIdleTime" value="${jdbc.idletime}"></property>-->
+    </bean>
+
+    <bean id="jdbcTemp" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+</beans>

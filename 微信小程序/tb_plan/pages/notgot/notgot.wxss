@@ -1,0 +1,48 @@
+/* pages/notgot/notgot.wxss */
+.history-table-wrap{
+  position: absolute;
+  width: 668rpx;
+  height: 578rpx;
+  left: 50%;
+  margin-left: -334rpx;
+  top: 70rpx;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* 表格代码   */
+.table{
+  border:1px solid #dadada;
+  border-right:0;
+  border-bottom: 0;
+  width: 98%;
+  margin-left: 1%;
+}
+.tr{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+.th,.td{
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width: 100%;
+}
+.th1,.th2,.td1,.td2{
+  width: 40%;
+}
+.th{
+  font-weight: 800;
+  background-color: cornflowerblue;
+  font-size: 28rpx;
+  color: #330e0e;
+}
+.td{
+  font-size: 20rpx;
+  color: #ec9480;
+}
+
+.title{
+  text-align: center
+}

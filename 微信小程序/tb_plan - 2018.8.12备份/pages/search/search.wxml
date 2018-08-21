@@ -1,0 +1,20 @@
+<!--pages/mypage/mypage.wxml-->
+<!-- <image src="http://qr.liantu.com/api.php?text=test"></image> -->
+<view class='title'>
+  <text>{{userInfo.nickName}}的优惠券</text>
+</view>
+ <view class='history-table-wrap'>
+    <view class="table">
+      <view class="tr">
+          <view class="th th1">序号</view>
+          <view class="th th2">金额</view>
+          <view class="th th3">二维码</view>
+      </view>
+      <view class="tr" wx:for="{{data}}" wx:for-item="item" wx:key="key">
+          <view class="td td1">{{item.xh}}</view>
+          <view class="td td2">{{item.je}}</view>
+          <view class="td td3" bindtap='ewm' data-name='{{item.ewm}}'>{{item.ewm}}</view>
+      </view>
+    
+    </view>
+ </view>

@@ -1,0 +1,31 @@
+<!--pages/back/back.wxml-->
+
+<!--button-->  
+<view class="btn" bindtap="powerDrawer" data-statu="open">新增优惠券</view>
+<view class="btn" bindtap="NotGot" >查看未领取优惠券</view> 
+<view class="btn" bindtap="usecoupon" >验证优惠券</view>   
+  
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
+<!--content-->  
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">  
+  
+  <!--drawer content-->  
+  <view class="drawer_title">弹窗标题</view> 
+  <form bindsubmit='test' bindreset="formReset">
+  <view class="drawer_content"> 
+    <view class="top grid">  
+      <label class="title col-0">每张金额</label>  
+      <input class="input_base input_h30 col-1" name="money" value=""></input>  
+    </view>  
+    <view class="top grid">  
+      <label class="title col-0">数量</label>  
+      <input class="input_base input_h30 col-1" name="number" value=""></input>  
+    </view>  
+  </view>
+  <button class='btn_ok' data-statu="close" formType="submit">确定</button>
+  </form>  
+    
+</view>
+ 

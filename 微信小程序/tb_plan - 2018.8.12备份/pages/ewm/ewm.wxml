@@ -1,0 +1,3 @@
+<!--pages/ewm/ewm.wxml-->
+<image src="http://qr.liantu.com/api.php?text={{name}}"></image>
+<button open-type='share'>分享二维码</button>

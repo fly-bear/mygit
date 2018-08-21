@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='gotomy' wx:if="{{IsAdmin=='ok'}}">
+      <button style='font-size:80%' bindtap='gotoback'>进入后台</button>
+    </view>
+  <view class="userinfo">
+    
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击登陆 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text wx:if="{{!hasUserInfo && canIUse}}" class="user-motto">未登陆</text>
+    <!-- <text wx:else class="user-motto">openid:\n{{userId}}</text> -->
+    <text wx:else class='user-motto'>已登录</text>
+  </view>
+
+  <view wx:if="{{hasUserInfo}}">
+    <button bindtap='goto'style='margin:10px'>查看优惠券</button>
+    <button style='margin:10px' bindtap='scancode'>扫码获取</button>
+  </view>
+  
+</view>
