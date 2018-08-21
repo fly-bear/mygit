@@ -1,0 +1,103 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/** 
+ * Colors 
+ */
+$emw--color-alpha: #7c2c2c;
+$emw--color-beta: #c6adad;
+$emw--color-gamma: lighten(gray,20%);
+$emw--color-delta: darken(gray,20%);
+$emw--color-epsilon: darken(#7c2c2c,5%);
+
+/** 
+ * Units 
+ */
+$emw--unit-alpha: 0.3em;
+$emw--unit-beta: 1em;
+$emw--unit-gamma: 1.3em;
+$emw--unit-delta: 0.05em;
+$emw--unit-epsilon: -12em;
+$emw--unit-zeta: 0.5em;
+$emw--unit-eta: 8.1em;
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  color: $emw--color-beta;
+  margin: $emw--unit-alpha;
+}
+body,html {
+  background: $emw--color-alpha;
+  color: $emw--color-beta;
+  font-size: $emw--unit-beta;
+  font-family: 'Open sans', sans-serif;
+  margin: 0;
+}
+header {
+  font-size: $emw--unit-gamma;
+  border-bottom: $emw--unit-delta solid $emw--color-gamma;
+  height: $emw--unit-beta * 1.5;
+  clear: both;
+  margin: $emw--unit-beta * 0.50 0;
+}
+header div{
+  float: right;
+  display: inline-block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+div.login {
+  margin: 0 $emw--unit-beta * 0.50;
+  text-transform: uppercase;
+}
+.loginbutton {
+  width: $emw--unit-beta * 5.2;
+  padding: $emw--unit-beta;
+  text-align: center;
+  height: $emw--unit-gamma + 0.3em;
+  margin: $emw--unit-beta * 4.9 auto;
+  background: lighten($emw--color-alpha,5%);
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+form {
+  display: none;
+  margin: $emw--unit-epsilon auto;
+  position: relative;
+  padding: $emw--unit-zeta;
+  width: $emw--unit-beta * 31;
+  font-size: $emw--unit-alpha + 0.4em;
+}
+form div {
+  transition: .5s ease-in-out;
+  display: inline-block;
+}
+form div label {
+  display: block;
+}
+form div input[type="text"], form div input[type="password"]{
+  background: $emw--color-gamma;
+  border: $emw--unit-alpha - 0.2em solid $emw--color-gamma;
+  width: $emw--unit-eta;
+}
+form div {
+  padding: $emw--unit-zeta;
+  margin: 0 $emw--unit-alpha - 0.15em;
+}
+form div input[type="text"]:focus, form div input[type="password"]:focus{
+  outline: none;
+  color: $emw--color-delta;
+}
+.activeloginbutton {
+  transform: rotate(360deg) translate(-205%);
+}
+.credit {
+  position: absolute;
+  bottom: 0;
+  margin: 1em;
+}
+form div:active, form div:hover, form div:focus {
+  background: $emw--color-epsilon;
+}
