@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Spring-4.3.16.RELEASE">
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-instrument-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-instrument-tomcat-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-aspects-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-context-support-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-expression-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-messaging-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-oxm-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-jms-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-jdbc-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-aop-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/commons-logging-1.2.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/aopalliance-1.0.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-test-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-tx-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-orm-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-beans-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-context-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-core-4.3.16.RELEASE.jar" />
+  </library>
+  <library name="Spring MVC-4.3.16.RELEASE">
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-webmvc-portlet-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-web-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-websocket-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-webmvc-4.3.16.RELEASE.jar" />
+  </library>
+  <library name="aopalliance-1.0">
+    <archive path="/home/flybear/IdeaProjects/wind/lib/aopalliance-1.0.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/commons-logging-1.2.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-aop-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-aspects-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-beans-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-context-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-context-support-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-core-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-expression-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-instrument-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-instrument-tomcat-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-jdbc-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-jms-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-messaging-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-orm-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-oxm-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-test-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-tx-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-web-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-webmvc-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-webmvc-portlet-4.3.16.RELEASE.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/lib/spring-websocket-4.3.16.RELEASE.jar" />
+  </library>
+  <library name="json-lib-2.4-jdk15">
+    <archive path="/home/flybear/IdeaProjects/wind/web/WEB-INF/lib/json-lib-2.4-jdk15.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/web/WEB-INF/lib/jackson-all-2.8.0.jar" />
+    <archive path="/home/flybear/IdeaProjects/wind/web/WEB-INF/lib/servlet-api.jar" />
+  </library>
+</eclipse-userlibraries>
+

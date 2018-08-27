@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="jdbc:hsqldb:file:/home/flybear/IdeaProjects/wind/src/com/wind/Dao/MySQL/" uuid="472e2ee9-0897-4209-89b3-f9e00bf1e698">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>ROOT</user-name>
+    </data-source>
+  </component>
+</project>

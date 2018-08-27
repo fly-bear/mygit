@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/wind"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<levels>
+		<level name="Spring-4.3.16.RELEASE" value="project"/>
+		<level name="Spring MVC-4.3.16.RELEASE" value="project"/>
+		<level name="aopalliance-1.0" value="project"/>
+		<level name="json-lib-2.4-jdk15" value="project"/>
+	</levels>
+</component>

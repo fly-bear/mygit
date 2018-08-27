@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="ROOT">
+    <output-path>$PROJECT_DIR$/out/artifacts/ROOT</output-path>
+    <root id="archive" name="ROOT.war">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="wind" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="aopalliance-1.0" />
+          <element id="library" level="project" name="json-lib-2.4-jdk15" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="wind/web/Web" />
+    </root>
+  </artifact>
+</component>
