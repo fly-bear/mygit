@@ -132,13 +132,13 @@
 <body>
 
 <header>
-  <div class="login"><a href="#">清梦</a></div>
+  <div class="login"><a href="/blog/mainpage">清梦</a></div>
   <div class="entypo-light-up"></div>
   <%--<div class="entypo-pencil"></div>--%>
 </header>
 <div style="position:absolute;top:35%;left:45%">
   <div class="loginbutton">LOGIN</div>
-  <form action="/blog/mainpage" method="POST">
+  <form action="/blog/checklogin" method="POST">
     <div>
       <label for="name">username</label>
       <input type="text" name="name" id="name" />
@@ -150,7 +150,7 @@
     <input type="submit"></input>
   </form>
 </div>
-<div class="credit">Inspired by Ozgun Tandiroglu's Dribbble <a href="http://dribbble.com/shots/1068722-Login">shot</a>.</div>
+<div class="credit">designed by flybear <a href="http://dribbble.com/shots/1068722-Login">shot</a>.</div>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 

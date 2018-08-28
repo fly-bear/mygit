@@ -31,6 +31,14 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
   </properties>
 
   <dependencies>
+
+<!--ueditor-->
+    <dependency>
+      <groupId>org.webjars.bower</groupId>
+      <artifactId>ueditor</artifactId>
+      <version>1.4.3</version>
+    </dependency>
+
     <!-- 添加jstl依赖 -->
     <dependency>
       <groupId>jstl</groupId>
@@ -109,6 +117,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>${mybatis.version}</version>
+    </dependency>
+
+    <!--阿里巴巴的druid连接池-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.0.28</version>
     </dependency>
 
     <!-- 添加mybatis/spring整合包依赖 -->
@@ -231,5 +246,16 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
         </plugin>
       </plugins>
     </pluginManagement>
+    <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
   </build>
 </project>

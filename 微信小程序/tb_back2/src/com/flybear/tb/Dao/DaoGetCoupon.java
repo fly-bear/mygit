@@ -35,6 +35,23 @@ public class DaoGetCoupon {
         });
         if (allname.size()==0)
             return "已被领取完！";
+        else{
+            allname =jdbc.query("select * from gotcoupons where openid=?", new Object[]{openid}, new ResultSetExtractor<List<Map>>() {
+                @Override
+                public List<Map> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                    List<Map> temp = new ArrayList<Map>();
+                    while (resultSet.next()){
+                        Map<String,String> tempmap = new LinkedHashMap<>();
+                        tempmap.put("name",resultSet.getString("name"));
+                        temp.add(tempmap);
+                    }
+                    return temp;
+                }
+            });
+            if (allname.size()>0){
+                return "您已领取过！";
+            }
+        }
         jdbc.update("insert into gotcoupons(openid,coupon,money,name)values(?,?,?,?)",new Object[]{openid,allname.get(0).get("name"),allname.get(0).get("money"),username});//在已领取优惠券库中插入
         jdbc.update("update coupons set got=1 where name=?",new Object[]{allname.get(0).get("name")});//将优惠券库的领取状态设为已领取
         return "领取成功！";

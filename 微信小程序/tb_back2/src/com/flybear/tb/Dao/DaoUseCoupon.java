@@ -26,7 +26,7 @@ public class DaoUseCoupon {
         });
         int temp=1;
         temp=temp*jdbc.update("update coupons set used=1 where name=?",new Object[]{coupon});
-        temp=temp*jdbc.update("delete from gotcoupons where coupon=?",new Object[]{coupon});
+        temp=temp*jdbc.update("update gotcoupons set used=1 where coupon=?",new Object[]{coupon});
         use.setResult(temp);
         return use;
     }

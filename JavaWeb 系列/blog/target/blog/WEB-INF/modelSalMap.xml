@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="mybatis">
+    <select id="select_user" parameterType="java.util.Map" resultType="java.util.Map"><!--专门查询user表，参数不定，尽量减少耦合，提高可重用性-->
+        select * from user
+        <where>
+            <if test="name!=null">
+                and name=#{name}
+            </if>
+            <if test="password!=null">
+                and password=#{password}
+            </if>
+        </where>
+    </select>
+</mapper>

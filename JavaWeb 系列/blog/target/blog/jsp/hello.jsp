@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>hello</title>
+    <link rel="ICON" href="/blog/favicon.ico"/>
+    <link rel="SHORTCUT ICON" href="/blog/bear.ico"/>
+    <title>fuck java</title>
 </head>
 <body>
-<h1>fuck java</h1>
+<h1>${result}</h1>
 </body>
 </html>
