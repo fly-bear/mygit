@@ -1,0 +1,25 @@
+
+#sidebar{
+    position: fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    width:300px;
+    background: #333;
+    padding:20px 0;
+}
+#sidebar ul{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+#sidebar ul a{
+    display: inline-block;
+    padding:10px 40px;
+    text-decoration: none;
+    color: #fff;
+    width:100%;
+}
+#sidebar ul a:hover{
+    background: #444;
+}

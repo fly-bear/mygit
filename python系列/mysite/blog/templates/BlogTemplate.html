@@ -1,8 +1,0 @@
-{% extends 'base.html' %}
-{% block content %}
-    {% for post in blog_list %}
-        <h2>{{ post.title }}</h2>
-        <p style="color: #0066FF">{{ post.timestamp }}</p>
-        <p>{{ post.body }}</p>
-    {% endfor %}
-{% endblock %}

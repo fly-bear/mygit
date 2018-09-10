@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'css/loginpage.css'%}">
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/check.login.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/buttons.css'%}">
+    <script type="text/javascript">
+        $('.message a').click(function(){
+            $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+    </script>
+
+    <script type="text/javascript">
+        function help() {
+            alert('Please contact the administrator to reset the password.')
+        }
+    </script>
+</head>
+<body>
+<div class="login-page">
+  <div class="form">
+    <form id="login" class="login-form">
+        <table style="width: 100%">
+            <tr><td><input type="text" name="id" placeholder="id"/></td></tr>
+            <tr><td id=""><span id="idmsg" style="color: red"></span></td></tr>
+            <tr><td><input type="password" name="password" placeholder="password"/></td></tr>
+            <tr><td id=""><span id="pwdmsg" style="color: red"></span></td></tr>
+        </table>
+      <a class="button button-3d button-action button-pill" onclick="check()">login</a>
+      <p class="message">Not registered? <a href="/CarApp/register">Create an account</a></p>
+        <br>
+        <p class="message"> <u><a href="/CarApp/contact">forget password?</a></u></p>
+    </form>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+/*
+Tutorial Name: Off Canvas Sliding Navigation
+Author: Samuel Dalusung
+*/
+
+
+/* GENERAL STYLES
+-------------------------------------------------*/
+
+html, 
+body{
+background: #ffffff;
+}
+
+
+h1, h2, h3{
+	text-align: center;
+
+}
+
+h1{
+	font-family: 'Raleway', Arial, sans-serif;
+	font-weight: 700;
+	font-size: 45px;
+	margin-top: 15px;
+	color: #ffffff!important;
+
+}
+
+table{
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+
+h3{
+	font-family: 'Raleway', Arial, sans-serif;
+	font-weight: 400;
+	font-size: 25px;
+	margin-top: 15px;
+	color: #918e84;
+}
+
+
+/* CONTAINERS
+-------------------------------------------------*/
+
+#container {
+    width: 100%;
+    height: 100vh; 
+    position: relative;
+    overflow: hidden;
+}
+
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    padding: 5.5% 0; 
+    position: relative;
+
+  -webkit-transform:translateX(0);
+   -moz-transform:translateX(0);
+    -ms-transform:translateX(0);
+     -o-transform:translateX(0);
+        transform:translateX(0);
+
+   -webkit-transition:.5s ease all;
+   -moz-transition:.5s ease all;
+     -o-transition:.5s ease all;
+        transition:.5s ease all;
+
+ 
+}
+
+#nav {
+     width: 300px;
+    height: 100%;
+    background: #ffdede;
+    position: absolute;
+    left: -300px;
+    top: 0;
+    
+    -webkit-transition:.5s ease all;
+   -moz-transition:.5s ease all;
+     -o-transition:.5s ease all;
+        transition:.5s ease all;
+    
+    /* By default, rotate the menu 90deg inwards */
+    -webkit-transform:rotateY(-90deg);
+   -moz-transform:rotateY(-90deg);
+    -ms-transform:rotateY(-90deg);
+     -o-transform:rotateY(-90deg);
+        transform:rotateY(-90deg);
+}
+
+#container.display-nav #canvas {
+   -webkit-transform:translateX(300px);
+   -moz-transform:translateX(300px);
+    -ms-transform:translateX(300px);
+     -o-transform:translateX(300px);
+        transform:translateX(300px);
+}
+
+/* transition the menu with perspective on "show-nav" */
+#container.display-nav #nav {
+    
+    -webkit-transform-origin:100% 50%;
+   -moz-transform-origin:100% 50%;
+    -ms-transform-origin:100% 50%;
+     -o-transform-origin:100% 50%;
+        transform-origin:100% 50%;
+    
+    -webkit-transform:perspective(600px) rotateY(0deg);
+   -moz-transform:perspective(600px) rotateY(0deg);
+    -ms-transform:perspective(600px) rotateY(0deg);
+     -o-transform:perspective(600px) rotateY(0deg);
+        transform:perspective(600px) rotateY(0deg);
+
+}
+
+
+/* UTILITIES
+-------------------------------------------------*/
+
+#bars{
+	font-size: 34px;
+	margin-left: 49px;
+	color: #fb1818;
+}
+
+#bars:hover{
+       color: #48b978
+}
+
+#title{
+	margin: 0;
+	padding: 1em;
+	color: rgba(0,0,0,0.4);
+	text-shadow: 0 0 1px rgba(0,0,0,0.1);
+	font-weight: 300;
+	font-size: 2em;
+	font-family: 'Raleway', Arial;
+}
+
+
+.border{
+border-top: 1px solid rgba(0,0,0,0.2);
+
+}
+
+a.back {
+   color: #38935f; 
+   width: 200px;
+   text-decoration: none; 
+   text-align: center; 
+   font-family: 'Raleway'; 
+   font-size: 20px;
+   font-weight: 600;
+   display: block;
+   margin: 50px auto 0 auto;
+   border: 2px solid #38935f;
+   padding: 10px;
+
+}
+
+a.back:hover{
+   color: #48b978; 
+ 
+   border: 2px solid #48b978;
+}
+
+
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+
+
+/* TOGGLE NAV
+-------------------------------------------------*/
+
+#toggle {
+    list-style: none;
+    margin-top: 40px;
+}
+#toggle div:hover {
+    background: rgba(0,0,0,0.2);
+	-webkit-box-shadow:inset 0 -1px rgba(0,0,0,0);
+   -moz-box-shadow:inset 0 -1px rgba(0,0,0,0);
+        box-shadow:inset 0 -1px rgba(0,0,0,0);
+	color: #fff;
+}
+#toggle div.active {
+    background: #ffab8a;
+}
+#toggle div {
+
+    cursor: pointer;
+    display: block;
+       border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+ span.menu-icons {
+    font-size: 20px;
+    height: 20px;
+    width: 22px;
+    float: left;
+    margin: 11px 0px 10px 37px;
+    color: rgba(0,0,0,0.4);
+}
+
+
+span.the-btn {
+    float: right;
+    font-size: 20px;
+    height: 30px;
+    width: 43px;
+    margin-top: 10px;
+	margin-right: 8px;
+    padding:0;
+    color: #fff;
+}
+
+#toggle ul {
+    list-style: disc;
+    display: none;
+    color: #fff;
+   background: rgba(0,0,0,0.2);
+	-webkit-box-shadow:inset 0 -1px rgba(0,0,0,0);
+   -moz-box-shadow:inset 0 -1px rgba(0,0,0,0);
+        box-shadow:inset 0 -1px rgba(0,0,0,0);
+
+}
+
+#toggle li a {
+    line-height: 41px;
+    color: rgba(0,0,0,0.4);
+    list-style: circle;
+    width: 240px;
+    padding: 0;
+  	 margin: 0 0 0 50px;
+
+}
+#toggle a {
+	  margin: 0 0 0 47px;
+    padding: 0;
+    font-family: 'Lato';
+    color: #fff;
+    line-height: 41px;
+    font-weight: normal;
+    font-size: 18px;
+    text-decoration: none;
+
+}
+
+#toggle ul li {
+     margin-left: 109px;   
+}
+
+#toggle ul li a:hover{
+	background: #1f9d55;
+}
+
+#toggle ul li a {
+     margin-left: 0;   
+}

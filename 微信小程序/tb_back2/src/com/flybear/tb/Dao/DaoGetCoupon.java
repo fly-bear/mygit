@@ -20,7 +20,7 @@ public class DaoGetCoupon {
     public String get(String batch,String openid,String username){
         ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:beans.xml");
         JdbcTemplate jdbc = (JdbcTemplate)ctx.getBean("jdbcTemp");
-        List<Map> allname= jdbc.query("select name,money from coupons where batch=? and got=0", new Object[]{batch}, new ResultSetExtractor<List<Map>>() {
+        List<Map> allname= jdbc.query("select name,money,batch from coupons where batch=? and got=0", new Object[]{batch}, new ResultSetExtractor<List<Map>>() {
             @Override
             public List<Map> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
                 List<Map> temp = new ArrayList<Map>();
@@ -28,6 +28,7 @@ public class DaoGetCoupon {
                     Map<String,String> tempmap = new LinkedHashMap<>();
                     tempmap.put("name",resultSet.getString("name"));
                     tempmap.put("money",resultSet.getString("money"));
+                    tempmap.put("batch",resultSet.getString("batch"));
                     temp.add(tempmap);
                 }
                 return temp;
@@ -36,7 +37,7 @@ public class DaoGetCoupon {
         if (allname.size()==0)
             return "已被领取完！";
         else{
-            allname =jdbc.query("select * from gotcoupons where openid=?", new Object[]{openid}, new ResultSetExtractor<List<Map>>() {
+            List<Map> use =jdbc.query("select * from gotcoupons where openid=? and batch=?", new Object[]{openid,batch}, new ResultSetExtractor<List<Map>>() {
                 @Override
                 public List<Map> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
                     List<Map> temp = new ArrayList<Map>();
@@ -48,11 +49,11 @@ public class DaoGetCoupon {
                     return temp;
                 }
             });
-            if (allname.size()>0){
+            if (use.size()>0){
                 return "您已领取过！";
             }
         }
-        jdbc.update("insert into gotcoupons(openid,coupon,money,name)values(?,?,?,?)",new Object[]{openid,allname.get(0).get("name"),allname.get(0).get("money"),username});//在已领取优惠券库中插入
+        jdbc.update("insert into gotcoupons(openid,coupon,money,name,batch)values(?,?,?,?,?)",new Object[]{openid,allname.get(0).get("name"),allname.get(0).get("money"),username,allname.get(0).get("batch")});//在已领取优惠券库中插入
         jdbc.update("update coupons set got=1 where name=?",new Object[]{allname.get(0).get("name")});//将优惠券库的领取状态设为已领取
         return "领取成功！";
     }
