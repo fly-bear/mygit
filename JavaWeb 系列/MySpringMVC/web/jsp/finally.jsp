@@ -29,7 +29,12 @@
 
 
         function getout() {
-            var data='{\"spcid\":\"ALL\",\"week\":\"'+document.getElementById("week").innerHTML+'\",\"major\":\"'+document.getElementById("major").innerHTML+'\",\"classes\":\"'+document.getElementById("classes").innerHTML+'\"}';
+            var data='{\"spcid\":\"ALL\",' +
+                '\"week\":\"'+document.getElementById("week").innerHTML+'\",' +
+                '\"major\":\"'+document.getElementById("major").innerHTML+'\",' +
+                '\"classes\":\"'+document.getElementById("classes").innerHTML+'\",' +
+                '\"isleft\":\"'+document.getElementById("isleft").innerHTML+'\",' +
+                '\"isinlib\":\"'+document.getElementById("isinlib").innerHTML+'"}';
             $.ajax({
                 type:"POST",
                 url:"/detail",
@@ -78,7 +83,12 @@
         }
 
         function get(spcid) {
-            var data='{\"spcid\":\"'+spcid+'\",\"week\":\"'+document.getElementById("week").innerHTML+'\",\"major\":\"'+document.getElementById("major").innerHTML+'\",\"classes\":\"'+document.getElementById("classes").innerHTML+'\"}';
+            var data='{\"spcid\":\"'+spcid+'\",' +
+                '\"week\":\"'+document.getElementById("week").innerHTML+'\",' +
+                '\"major\":\"'+document.getElementById("major").innerHTML+'\",' +
+                '\"classes\":\"'+document.getElementById("classes").innerHTML+'\",' +
+                '\"isleft\":\"'+document.getElementById("isleft").innerHTML+'\",' +
+                '\"isinlib\":\"'+document.getElementById("isinlib").innerHTML+'"}';
             $.ajax({
                 type:"POST",
                 contentType : "application/json;charset=utf-8",
@@ -222,7 +232,12 @@
         var headArray = [];
 
         function requestJson() { <%--ajax--%>
-            var data='{\"week\":\"'+document.getElementById("week").innerHTML+'\",\"major\":\"'+document.getElementById("major").innerHTML+'\",\"classes\":\"'+document.getElementById("classes").innerHTML+'\"}';
+            var data='{\"spcid\":\"ALL\",' +
+                '\"week\":\"'+document.getElementById("week").innerHTML+'\",' +
+                '\"major\":\"'+document.getElementById("major").innerHTML+'\",' +
+                '\"classes\":\"'+document.getElementById("classes").innerHTML+'\",' +
+                '\"isleft\":\"'+document.getElementById("isleft").innerHTML+'\",' +
+                '\"isinlib\":\"'+document.getElementById("isinlib").innerHTML+'"}';
             $.ajax({
                 type : "post",
                 url : "/search",
@@ -309,7 +324,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body onload="requestJson()">
 
 <!-- wrap_right -->
 <div class="wrap_right">
@@ -423,6 +438,26 @@
                         <li><a href="#">1504</a></li>
                         <li><a href="#">1505</a></li>
                         <li><a href="#">1506</a></li>
+                        <li><a href="#">全部</a></li>
+                    </ul></dd></dl>
+            </div>
+            <div class="selectbox floatL mag_r20">
+                <span class="sttl">是否离汉：</span>
+                <dl class="select" style="width:200px;">
+                    <dt id="isleft">全部</dt>
+                    <dd><ul>
+                        <li><a href="#">是</a></li>
+                        <li><a href="#">否</a></li>
+                        <li><a href="#">全部</a></li>
+                    </ul></dd></dl>
+            </div>
+            <div class="selectbox floatL mag_r20">
+                <span class="sttl">是否武汉库：</span>
+                <dl class="select" style="width:200px;">
+                    <dt id="isinlib">全部</dt>
+                    <dd><ul>
+                        <li><a href="#">是</a></li>
+                        <li><a href="#">否</a></li>
                         <li><a href="#">全部</a></li>
                     </ul></dd></dl>
             </div>

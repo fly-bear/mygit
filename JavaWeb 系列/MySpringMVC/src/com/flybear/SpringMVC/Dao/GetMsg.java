@@ -21,40 +21,54 @@ public class GetMsg {
         String week = p.getWeek();
         String major = p.getMajor();
         String classes = p.getClasses();
+        String isleft = p.getIsleft();
+        String isinlib = p.getIsinlib();
         String condition1;
         String condition2;
         String condition3;
+        String condition4;
+        String condition5;
         String condition="where ";
 
         if(week.equals("全部")){
             condition1="";
-        }
-        else {
+        } else {
             condition1=" and week="+week;
         }
         if(major.equals("全部")){
             condition2="";
-        }
-        else{
+        } else{
             condition2=" and major=\""+major+"\"";
         }
         if(classes.equals("全部")){
             condition3="";
-        }
-        else{
+        } else{
             condition3=" and classes=\""+major+classes+"\"";
         }
-
+        if(isinlib.equals("全部")){
+            condition4="";
+        }else{
+            condition4=" and isinlib=\""+isinlib+"\"";
+        }
+        if(isleft.equals("全部")){
+            condition5="";
+        }else {
+            condition5=" and isleft=\""+isleft+"\"";
+        }
 
         if(logname.equals("flybear")){
             if(!condition1.equals("")){
-                condition=condition+condition1.substring(5)+condition2+condition3;
+                condition=condition+condition1.substring(5)+condition2+condition3+condition4+condition5;
             }
             else if(!condition2.equals("")){
-                condition=condition+condition2.substring(5)+condition3;
+                condition=condition+condition2.substring(5)+condition3+condition4+condition5;
             }
             else if(!condition3.equals("")){
-                condition=condition+condition3.substring(5);
+                condition=condition+condition3.substring(5)+condition4+condition5;
+            }else if(!condition4.equals("")){
+                condition=condition+condition4.substring(5)+condition5;
+            }else if(!condition5.equals("")){
+                condition=condition+condition5.substring(5);
             }
             else{
                 condition="";
@@ -64,7 +78,7 @@ public class GetMsg {
         }
 
 
-        String sql = "select spcid,week,classes,id,name,aim,isinlib,reason,leavetime,returntime,status from mytable " + condition;
+        String sql = "select spcid,week,classes,id,name,aim,isinlib,reason,leavetime,isleft,returntime,status from mytable " + condition;
         ArrayList<Map> result = new ArrayList<>();
 
         try {
@@ -93,6 +107,7 @@ public class GetMsg {
                 tempmap.put("学号", rs.getString("id"));
                 tempmap.put("姓名", rs.getString("name"));
                 tempmap.put("目的地", rs.getString("aim"));
+                tempmap.put("是否离汉",rs.getString("isleft"));
                 tempmap.put("武汉库",rs.getString("isinlib"));
                 tempmap.put("理由", rs.getString("reason"));
                 tempmap.put("离校时间", rs.getString("leavetime"));

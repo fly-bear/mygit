@@ -18,7 +18,7 @@ ${message}
     请返回首页查询核对信息
 </h1>
 <div align="center">
-    <a href="http://bear.flybear.wang:8080/form">返回首页</a>
+    <a href="httsp://www.flybear.wang/form">返回首页</a>
 </div>
 
 

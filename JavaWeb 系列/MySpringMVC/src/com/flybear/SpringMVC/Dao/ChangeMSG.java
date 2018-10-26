@@ -37,7 +37,7 @@ public class ChangeMSG {
 
 
             int a =statement.executeUpdate(sql);
-            result=(a>0)?"审批成功！":"审批失败！";
+            result=(a>0)?"操作成功！":"操作失败！";
 
             statement.close();
             con.close();

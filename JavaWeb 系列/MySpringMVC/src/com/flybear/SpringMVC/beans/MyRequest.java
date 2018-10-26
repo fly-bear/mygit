@@ -9,6 +9,23 @@ public class MyRequest {
     private String major;
     private String classes;
     private String spcid;
+    private String isleft,isinlib;
+
+    public String getIsleft() {
+        return isleft;
+    }
+
+    public void setIsleft(String isleft) {
+        this.isleft = isleft;
+    }
+
+    public String getIsinlib() {
+        return isinlib;
+    }
+
+    public void setIsinlib(String isinlib) {
+        this.isinlib = isinlib;
+    }
 
     public String getSpcid() {
         return spcid;

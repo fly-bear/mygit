@@ -9,6 +9,7 @@
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-lang-2.6.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jackson-all-2.8.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/servlet-api.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
