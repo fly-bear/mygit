@@ -1,0 +1,49 @@
+{
+  "button": [
+    {
+      "name": "菜单1",
+      "sub_button": [
+        {
+          "type": "view",
+          "name": "百度",
+          "url": "http://www.baidu.com/"
+        },
+        {
+          "type": "view",
+          "name": "google",
+          "url": "http://www.google.com/"
+        }
+      ]
+    },
+    {
+      "name": "菜单2",
+      "sub_button": [
+        {
+          "type": "scancode_push",
+          "name": "扫一扫",
+          "key": "rselfmenu_0_1"
+        },
+        {
+          "type": "pic_weixin",
+          "name": "发送照片",
+          "key": "rselfmenu_1_2"
+        }
+      ]
+    },
+    {
+      "name": "菜单3",
+      "sub_button": [
+        {
+          "type": "scancode_push",
+          "name": "扫一扫",
+          "key": "rselfmenu_0_3"
+        },
+        {
+          "type": "pic_weixin",
+          "name": "发送照片",
+          "key": "rselfmenu_1_4"
+        }
+      ]
+    }
+  ]
+}
