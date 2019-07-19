@@ -2,4 +2,4 @@
 
 ## Wish you like it
 
-## And my personal blog: [** 清梦 **](http://localhost:8080/blog/mainpage)
+## And my personal blog: [** 清梦 **](https://fly-bear.github.io)
