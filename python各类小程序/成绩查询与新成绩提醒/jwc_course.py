@@ -14,7 +14,7 @@ password = getpass.getpass("请输入密码(输入时将不会显示)：")
 while password =='':
     password = getpass.getpass("请输入密码(输入时将不会显示)：")
 # userName='0121511371128'
-# password='dzx52395239'
+# password='dzx********'
 s = requests.session()
 # 先登陆
 url1 = 'http://sso.jwc.whut.edu.cn/Certification/login.do'
