@@ -115,7 +115,7 @@ def check(newscore):
 if __name__=='__main__':
     now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     userName = '0121511371128'
-    password = 'dzx52395239'
+    password = 'dzx********
     receivers = ['dzx518@whut.edu.cn','1261422271@qq.com','15257822881@sohu.com']
     myscore=get_score(userName, password)
     myscore2=str(myscore)
